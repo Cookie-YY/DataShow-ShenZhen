@@ -21,11 +21,15 @@
 
 ### 文件目录说明datashow
 - datashow（所有文件的根目录-数据展示）
+    - README.md
+    - version：版本记录
     - command：命令文件夹（用于存放所有命令脚本）
+        - **main.py**：主程序入口，用法`./root/anaconda/bin/python3 main.py [options]`
+        - **settings.json**：全局设置文件
         - excute_log：用于存放执行日志（每部分的执行时间）
-            - data_calculate：数据计算部分各流程的时间
-            - data_exract：数据抽取部分各流程的时间
-            - json_update：json更新部分个部分的时间
+            - data_calculate：数据计算部分各流程的时间和运行时间
+            - data_exract：数据抽取部分各流程的时间和运行时间
+            - json_update：json更新部分个部分的时间和运行时间
             - wrong：记录错误信息
         - excute_order：用于存放各部分流程的执行顺序（可指定流程执行）
             - data_calculate_order：用于存放数据计算各指标的执行顺序
@@ -36,9 +40,6 @@
             - app_change.py：根据用户设置更改程序主体脚本
             - base.py：所有脚本的基类（一些公共方法）
             - theme2json_*.py：修改大屏页面脚本
-        - **settings.json**：全局设置文件
-        - **main.py**：主程序入口，用法`./root/anaconda/bin/python3 main.py [options]`
-        - **app_change.py**：用于根据settings.json中的配置修改程序的脚本
     - result：结果文件夹（用于存放标准库和计算结果）
         - standard：用于存放所有分类标准（分类代码，分类名称，大屏映射）
         - theme：用于存放所有计算结果（主题库）
@@ -46,8 +47,6 @@
         - data_extract：用于存放数据抽取部分的所有流程
         - standard_extract：用于存放标准抽取部分的所有流程
         - data_calculate：用于存放数据计算部分的所有流程
-    - README.md
-    - version：版本记录
 - core：用于存放主要启动程序（用于存放启动环境）
     - knime_4.0.0：用于存放数据计算的工具
     - knime.epf：knime的配置文件
@@ -58,7 +57,7 @@
     - bzip22-1.0.6.tar.gz
     - nginx-1.17.0.tar.gz
     - zlib-1.2.7.3.tar.gz
-    - README：环境配置信息
+    - README：环境配置信息和方法
     
 ### 配置文件说明settings.json：
 - SIGNIFICANT_DIGITS：涉及除法时保留的有效数字
