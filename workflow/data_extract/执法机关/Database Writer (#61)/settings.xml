@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns="http://www.knime.org/2008/09/XMLConfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.knime.org/2008/09/XMLConfig http://www.knime.org/XMLConfig_2008_09.xsd" key="settings.xml">
+<entry key="node_file" type="xstring" value="settings.xml"/>
+<config key="flow_stack"/>
+<config key="internal_node_subsettings">
+<entry key="memory_policy" type="xstring" value="CacheSmallInMemory"/>
+</config>
+<config key="model">
+<entry key="driver" type="xstring" value="oracle.jdbc.OracleDriver"/>
+<entry key="database" type="xstring" value="jdbc:oracle:thin:@&lt;host&gt;:&lt;port&gt;/&lt;database_name&gt;"/>
+<entry key="user" type="xstring" value="[Workflows edited with 3.4.1, will not work in older versions]"/>
+<entry key="userName" type="xstring" value=""/>
+<entry key="passwordEncrypted" type="xpassword" value="0168F07456E2496FA29F15BC7D3BC09E95"/>
+<entry key="password" type="xstring" isnull="true" value=""/>
+<entry key="timezone" type="xstring" value="current"/>
+<entry key="validateConnection" type="xboolean" value="false"/>
+<entry key="retrieveMetadataInConfigure" type="xboolean" value="false"/>
+<entry key="allowSpacesInColumnNames" type="xboolean" value="true"/>
+<entry key="rowIdsStartWithZero" type="xboolean" value="false"/>
+<entry key="databaseIdentifier" type="xstring" isnull="true" value=""/>
+<entry key="kerberos" type="xboolean" value="false"/>
+<entry key="knimeVersion" type="xstring" value="3.7.1"/>
+<entry key="table" type="xstring" value="BUSIN_ORG_ORGANIZATION"/>
+<entry key="append_data" type="xboolean" value="false"/>
+<entry key="insert_null_for_missing_cols" type="xboolean" value="false"/>
+<entry key="fail_on_error" type="xboolean" value="false"/>
+<config key="sql_types">
+<entry key="ID" type="xstring" value="varchar(255)"/>
+<entry key="PARENT_ID" type="xstring" value="varchar(255)"/>
+<entry key="SUB_NAME" type="xstring" value="varchar(255)"/>
+<entry key="NATURE" type="xstring" value="varchar(255)"/>
+<entry key="SUB_LEVEL" type="xstring" value="varchar(255)"/>
+<entry key="IS_DELETE" type="xstring" value="numeric(30,10)"/>
+<entry key="CREATE_ID" type="xstring" value="numeric(30,10)"/>
+<entry key="CREATE_TIME" type="xstring" value="timestamp"/>
+<entry key="EXAMINE" type="xstring" value="numeric(30,10)"/>
+<entry key="CODE" type="xstring" value="varchar(255)"/>
+<entry key="AREA" type="xstring" value="varchar(255)"/>
+<entry key="DEPARTMENT_CODE" type="xstring" value="varchar(255)"/>
+<entry key="IS_DEPUTE" type="xstring" value="numeric(30,10)"/>
+<entry key="UPDATE_TIME" type="xstring" value="timestamp"/>
+<entry key="UPDATE_ID" type="xstring" value="numeric(30,10)"/>
+<entry key="EXAMINE_TIME" type="xstring" value="timestamp"/>
+<entry key="EXAMINE_ID" type="xstring" value="numeric(30,10)"/>
+<entry key="DIS_EXAMINE_TIME" type="xstring" value="timestamp"/>
+<entry key="ORGANIZATION_CODE" type="xstring" value="varchar(255)"/>
+<entry key="REPRESENTATIVE" type="xstring" value="varchar(255)"/>
+<entry key="ENTRUST_NATURE" type="xstring" value="varchar(255)"/>
+<entry key="TELEPHONE" type="xstring" value="varchar(255)"/>
+<entry key="POST_CODE" type="xstring" value="varchar(255)"/>
+<entry key="FAX" type="xstring" value="varchar(255)"/>
+<entry key="ADDRESS" type="xstring" value="varchar(255)"/>
+<entry key="DELETE_TIME" type="xstring" value="timestamp"/>
+<entry key="FIELD" type="xstring" value="varchar(255)"/>
+<entry key="GROUP_AREA" type="xstring" value="varchar(255)"/>
+<entry key="SUBJECT_POWER" type="xstring" value="varchar(255)"/>
+<entry key="ORG_SYS" type="xstring" value="varchar(255)"/>
+<entry key="USERNAME" type="xstring" value="varchar(255)"/>
+<entry key="PASSWORD" type="xstring" value="varchar(255)"/>
+<entry key="INNER_SUP_ORG_POST_NUM" type="xstring" value="numeric(30,10)"/>
+<entry key="BASIS" type="xstring" value="varchar(255)"/>
+<entry key="MAIL" type="xstring" value="varchar(255)"/>
+<entry key="ORG_MODE" type="xstring" value="varchar(255)"/>
+<entry key="TERM_BEGIN" type="xstring" value="timestamp"/>
+<entry key="TERM_END" type="xstring" value="timestamp"/>
+<entry key="DEPARTMENT_NAME" type="xstring" value="varchar(255)"/>
+<entry key="NATURE_NAME" type="xstring" value="varchar(255)"/>
+<entry key="SUB_LEVEL_NAME" type="xstring" value="varchar(255)"/>
+<entry key="IS_PUBLIC" type="xstring" value="numeric(30,10)"/>
+<entry key="ID (#1)" type="xstring" value="varchar(255)"/>
+<entry key="DEPT_ID" type="xstring" value="varchar(255)"/>
+<entry key="FIELD_NAME" type="xstring" value="varchar(255)"/>
+</config>
+<entry key="batch_size" type="xint" value="1"/>
+</config>
+<config key="nodeAnnotation">
+<entry key="text" type="xstring" value="写出业务库%%00013%%00010BUSIN_ORG_ORGANIZATION"/>
+<entry key="bgcolor" type="xint" value="16777215"/>
+<entry key="x-coordinate" type="xint" value="978"/>
+<entry key="y-coordinate" type="xint" value="739"/>
+<entry key="width" type="xint" value="165"/>
+<entry key="height" type="xint" value="30"/>
+<entry key="alignment" type="xstring" value="CENTER"/>
+<entry key="borderSize" type="xint" value="0"/>
+<entry key="borderColor" type="xint" value="16777215"/>
+<entry key="defFontSize" type="xint" value="9"/>
+<entry key="annotation-version" type="xint" value="20151123"/>
+<config key="styles"/>
+</config>
+<entry key="customDescription" type="xstring" isnull="true" value=""/>
+<entry key="state" type="xstring" value="IDLE"/>
+<entry key="factory" type="xstring" value="org.knime.base.node.io.database.DBWriterNodeFactory"/>
+<entry key="node-name" type="xstring" value="Database Writer (legacy)"/>
+<entry key="node-bundle-name" type="xstring" value="KNIME Base Nodes"/>
+<entry key="node-bundle-symbolic-name" type="xstring" value="org.knime.base"/>
+<entry key="node-bundle-vendor" type="xstring" value="KNIME AG, Zurich, Switzerland"/>
+<entry key="node-bundle-version" type="xstring" value="4.0.0.v201906241150"/>
+<entry key="node-feature-name" type="xstring" value="KNIME Core"/>
+<entry key="node-feature-symbolic-name" type="xstring" value="org.knime.features.base.feature.group"/>
+<entry key="node-feature-vendor" type="xstring" value="KNIME AG, Zurich, Switzerland"/>
+<entry key="node-feature-version" type="xstring" value="4.0.0.v201906261003"/>
+<config key="factory_settings"/>
+<entry key="name" type="xstring" value="Database Writer (legacy)"/>
+<entry key="hasContent" type="xboolean" value="false"/>
+<entry key="isInactive" type="xboolean" value="false"/>
+<config key="ports"/>
+<config key="filestores">
+<entry key="file_store_location" type="xstring" isnull="true" value=""/>
+<entry key="file_store_id" type="xstring" isnull="true" value=""/>
+</config>
+</config>

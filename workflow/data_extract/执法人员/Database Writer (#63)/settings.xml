@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns="http://www.knime.org/2008/09/XMLConfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.knime.org/2008/09/XMLConfig http://www.knime.org/XMLConfig_2008_09.xsd" key="settings.xml">
+<entry key="node_file" type="xstring" value="settings.xml"/>
+<config key="flow_stack"/>
+<config key="internal_node_subsettings">
+<entry key="memory_policy" type="xstring" value="CacheSmallInMemory"/>
+</config>
+<config key="model">
+<entry key="driver" type="xstring" value="oracle.jdbc.OracleDriver"/>
+<entry key="database" type="xstring" value="jdbc:oracle:thin:@&lt;host&gt;:&lt;port&gt;/&lt;database_name&gt;"/>
+<entry key="user" type="xstring" value="[Workflows edited with 3.4.1, will not work in older versions]"/>
+<entry key="userName" type="xstring" value=""/>
+<entry key="passwordEncrypted" type="xpassword" value="0168F07456E2496FA29F15BC7D3BC09E95"/>
+<entry key="password" type="xstring" isnull="true" value=""/>
+<entry key="timezone" type="xstring" value="current"/>
+<entry key="validateConnection" type="xboolean" value="false"/>
+<entry key="retrieveMetadataInConfigure" type="xboolean" value="false"/>
+<entry key="allowSpacesInColumnNames" type="xboolean" value="true"/>
+<entry key="rowIdsStartWithZero" type="xboolean" value="false"/>
+<entry key="databaseIdentifier" type="xstring" isnull="true" value=""/>
+<entry key="kerberos" type="xboolean" value="false"/>
+<entry key="knimeVersion" type="xstring" value="3.7.1"/>
+<entry key="table" type="xstring" value="BUSIN_PERSON_ENFORCE"/>
+<entry key="append_data" type="xboolean" value="false"/>
+<entry key="insert_null_for_missing_cols" type="xboolean" value="false"/>
+<entry key="fail_on_error" type="xboolean" value="false"/>
+<config key="sql_types">
+<entry key="ID" type="xstring" value="varchar(255)"/>
+<entry key="NAME" type="xstring" value="varchar(255)"/>
+<entry key="SEX" type="xstring" value="varchar(255)"/>
+<entry key="PERSON_ID" type="xstring" value="varchar(255)"/>
+<entry key="BIRTH" type="xstring" value="timestamp"/>
+<entry key="IS_DELETE" type="xstring" value="numeric(30,10)"/>
+<entry key="USERNAME" type="xstring" value="varchar(255)"/>
+<entry key="PASSWORD" type="xstring" value="varchar(255)"/>
+<entry key="JOB" type="xstring" value="varchar(255)"/>
+<entry key="EDUCATION" type="xstring" value="varchar(255)"/>
+<entry key="NATION" type="xstring" value="varchar(255)"/>
+<entry key="RELEASE" type="xstring" value="numeric(30,10)"/>
+<entry key="EXAMINE" type="xstring" value="numeric(30,10)"/>
+<entry key="DEPARTMENT_CODE" type="xstring" value="varchar(255)"/>
+<entry key="CITY_CODE" type="xstring" value="varchar(255)"/>
+<entry key="DEPARTMENT_GETTIME" type="xstring" value="timestamp"/>
+<entry key="CITY_GETTIME" type="xstring" value="timestamp"/>
+<entry key="POWER_TYPES" type="xstring" value="varchar(255)"/>
+<entry key="POLITIVE" type="xstring" value="varchar(255)"/>
+<entry key="PERSON_TYPE" type="xstring" value="varchar(255)"/>
+<entry key="TELEPHONE" type="xstring" value="varchar(255)"/>
+<entry key="MOBILE" type="xstring" value="varchar(255)"/>
+<entry key="IS_GETCODE" type="xstring" value="numeric(30,10)"/>
+<entry key="EMAIL" type="xstring" value="varchar(255)"/>
+<entry key="EXAMINE_TIME" type="xstring" value="timestamp"/>
+<entry key="UPDATE_TIME" type="xstring" value="timestamp"/>
+<entry key="CREATE_TIME" type="xstring" value="timestamp"/>
+<entry key="CREATE_ID" type="xstring" value="varchar(255)"/>
+<entry key="UPDATE_ID" type="xstring" value="varchar(255)"/>
+<entry key="EXAMINE_ID" type="xstring" value="varchar(255)"/>
+<entry key="DIS_EXAMINE_TIME" type="xstring" value="timestamp"/>
+<entry key="EFFECTIVE_TIME" type="xstring" value="timestamp"/>
+<entry key="ENFORCE_TYPE" type="xstring" value="varchar(255)"/>
+<entry key="WORK_UNIT" type="xstring" value="varchar(255)"/>
+<entry key="DEPT_EFFECTIVE_TIME" type="xstring" value="timestamp"/>
+<entry key="ENTRUST_ID" type="xstring" value="varchar(255)"/>
+<entry key="RESOURCE_TYPE" type="xstring" value="numeric(30,10)"/>
+<entry key="JOB_CLASS" type="xstring" value="varchar(255)"/>
+<entry key="DELETE_TIME" type="xstring" value="timestamp"/>
+<entry key="IS_LAWCODE" type="xstring" value="numeric(30,10)"/>
+<entry key="PHOTO" type="xstring" value="varchar(255)"/>
+<entry key="CODE_TYPE" type="xstring" value="varchar(255)"/>
+<entry key="DEPT_GETTIME_BEGIN" type="xstring" value="timestamp"/>
+<entry key="DEPT_GETTIME_END" type="xstring" value="timestamp"/>
+<entry key="DEPT_GETTIME_OFFICE" type="xstring" value="varchar(255)"/>
+<entry key="CITY_GETTIME_BEGIN" type="xstring" value="timestamp"/>
+<entry key="CITY_GETTIME_END" type="xstring" value="timestamp"/>
+<entry key="CITY_GETTIME_OFFICE" type="xstring" value="varchar(255)"/>
+<entry key="DEPT_NAME" type="xstring" value="varchar(255)"/>
+<entry key="BIRTH_Arr[0]" type="xstring" value="integer"/>
+<entry key="BIRTH_Arr[1]" type="xstring" value="integer"/>
+<entry key="BIRTH_Arr[2]" type="xstring" value="varchar(255)"/>
+<entry key="ShiftDate" type="xstring" value="timestamp"/>
+<entry key="ShiftDate_Arr[0]" type="xstring" value="integer"/>
+<entry key="ShiftDate_Arr[1]" type="xstring" value="integer"/>
+<entry key="ShiftDate_Arr[2]" type="xstring" value="integer"/>
+<entry key="AGE" type="xstring" value="numeric(30,10)"/>
+</config>
+<entry key="batch_size" type="xint" value="1"/>
+</config>
+<config key="nodeAnnotation">
+<entry key="text" type="xstring" value="写出业务库%%00013%%00010BUSIN_PERSON_ENFORCE"/>
+<entry key="bgcolor" type="xint" value="16777215"/>
+<entry key="x-coordinate" type="xint" value="2341"/>
+<entry key="y-coordinate" type="xint" value="1979"/>
+<entry key="width" type="xint" value="161"/>
+<entry key="height" type="xint" value="30"/>
+<entry key="alignment" type="xstring" value="CENTER"/>
+<entry key="borderSize" type="xint" value="0"/>
+<entry key="borderColor" type="xint" value="16777215"/>
+<entry key="defFontSize" type="xint" value="9"/>
+<entry key="annotation-version" type="xint" value="20151123"/>
+<config key="styles"/>
+</config>
+<entry key="customDescription" type="xstring" isnull="true" value=""/>
+<entry key="state" type="xstring" value="IDLE"/>
+<entry key="factory" type="xstring" value="org.knime.base.node.io.database.DBWriterNodeFactory"/>
+<entry key="node-name" type="xstring" value="Database Writer (legacy)"/>
+<entry key="node-bundle-name" type="xstring" value="KNIME Base Nodes"/>
+<entry key="node-bundle-symbolic-name" type="xstring" value="org.knime.base"/>
+<entry key="node-bundle-vendor" type="xstring" value="KNIME AG, Zurich, Switzerland"/>
+<entry key="node-bundle-version" type="xstring" value="4.0.0.v201906241150"/>
+<entry key="node-feature-name" type="xstring" value="KNIME Core"/>
+<entry key="node-feature-symbolic-name" type="xstring" value="org.knime.features.base.feature.group"/>
+<entry key="node-feature-vendor" type="xstring" value="KNIME AG, Zurich, Switzerland"/>
+<entry key="node-feature-version" type="xstring" value="4.0.0.v201906261003"/>
+<config key="factory_settings"/>
+<entry key="name" type="xstring" value="Database Writer (legacy)"/>
+<entry key="hasContent" type="xboolean" value="false"/>
+<entry key="isInactive" type="xboolean" value="false"/>
+<config key="ports"/>
+<config key="filestores">
+<entry key="file_store_location" type="xstring" isnull="true" value=""/>
+<entry key="file_store_id" type="xstring" isnull="true" value=""/>
+</config>
+</config>

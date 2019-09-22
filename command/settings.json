@@ -1,0 +1,48 @@
+{
+  "SIGNIFICANT_DIGITS": 2,
+  "FILE_ENCODING": "UTF-8",
+  "STATE": "PRO",
+
+  "PATH": {
+    "PATH_DEV": {
+      "PATH_DAPING_DATA": "D:\\Software\\apache-tomcat-8.5.39\\webapps\\szdp\\static\\data\\supervision\\",
+      "PATH_PYTHON": "python",
+      "PATH_CORE": "D:\\Software\\KNIME\\knime.exe",
+      "PATH_EPF": "D:\\Software\\knime.epf",
+      "PATH_OJDBC": "D:\\Software\\ojdbc8.jar"},
+    "PATH_PRO": {
+      "PATH_DAPING_DATA": "/opt/szfzb/szdp/static/data/supervision/",
+      "PATH_PYTHON": "/root/anaconda/bin/python3",
+      "PATH_CORE": "/opt/core/knime_4.0.0/knime",
+      "PATH_EPF": "/opt/core/knime.epf",
+      "PATH_OJDBC": "/opt/core/ojdbc8.jar"}
+
+    },
+
+  "DATABASE": {
+    "DATABASE_DEV": {
+      "RAW_DATABASE": {
+        "IP":"127.0.0.1:1521:ORCL",
+        "USER": "AP_PRO_SHZHPT",
+        "PASSWORD_ENCRYPTED": "01BE7FAD048DD1002EFF604B0F821B2606"
+      },
+      "BUSIN_DATABASE": {
+        "IP":"127.0.0.1:1521:ORCL",
+        "USER": "DSJFX",
+        "PASSWORD_ENCRYPTED": "01E9F30BD2AE8A8DFA447A77137DD6DC72"
+      }
+    },
+    "DATABASE_PRO": {
+      "RAW_DATABASE": {
+        "IP":"10.253.131.4:1521:ORCLUTF8",
+        "USER": "AP_PRO_SHZHPT",
+        "PASSWORD_ENCRYPTED": "01BE7FAD048DD1002EFF604B0F821B2606"
+      },
+      "BUSIN_DATABASE": {
+        "IP":"10.253.131.3:1521:ORCLUTF8",
+        "USER": "DSJFX",
+        "PASSWORD_ENCRYPTED": "01E9F30BD2AE8A8DFA447A77137DD6DC72"
+      }
+    }
+  }
+}

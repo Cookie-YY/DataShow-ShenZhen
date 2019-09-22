@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns="http://www.knime.org/2008/09/XMLConfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.knime.org/2008/09/XMLConfig http://www.knime.org/XMLConfig_2008_09.xsd" key="settings.xml">
+<entry key="node_file" type="xstring" value="settings.xml"/>
+<config key="flow_stack"/>
+<config key="internal_node_subsettings">
+<entry key="memory_policy" type="xstring" value="CacheSmallInMemory"/>
+</config>
+<config key="model">
+<entry key="duplicateHandling" type="xstring" value="AppendSuffixAutomatic"/>
+<entry key="compositionMode" type="xstring" value="MatchAll"/>
+<entry key="joinMode" type="xstring" value="LeftOuterJoin"/>
+<config key="leftTableJoinPredicate">
+<entry key="array-size" type="xint" value="1"/>
+<entry key="0" type="xstring" value="SEX"/>
+</config>
+<config key="rightTableJoinPredicate">
+<entry key="array-size" type="xint" value="1"/>
+<entry key="0" type="xstring" value="SEX_CODE"/>
+</config>
+<entry key="suffix" type="xstring" value="(*)"/>
+<config key="leftIncludeCols">
+<entry key="array-size" type="xint" value="66"/>
+<entry key="0" type="xstring" value="ID"/>
+<entry key="1" type="xstring" value="ID (#1)"/>
+<entry key="2" type="xstring" value="PERSON_ID"/>
+<entry key="3" type="xstring" value="ORGANIZATION_ID"/>
+<entry key="4" type="xstring" value="PERSON_NAME"/>
+<entry key="5" type="xstring" value="SEX"/>
+<entry key="6" type="xstring" value="PERSON_ID (#1)"/>
+<entry key="7" type="xstring" value="BIRTH"/>
+<entry key="8" type="xstring" value="IS_DELETE"/>
+<entry key="9" type="xstring" value="USERNAME"/>
+<entry key="10" type="xstring" value="USER_PASSWORD"/>
+<entry key="11" type="xstring" value="PERSON_JOB"/>
+<entry key="12" type="xstring" value="EDUCATION"/>
+<entry key="13" type="xstring" value="NATION"/>
+<entry key="14" type="xstring" value="IS_RELEASE"/>
+<entry key="15" type="xstring" value="EXAMINE"/>
+<entry key="16" type="xstring" value="DEPARTMENT_CODE"/>
+<entry key="17" type="xstring" value="CITY_CODE"/>
+<entry key="18" type="xstring" value="DEPARTMENT_GETTIME"/>
+<entry key="19" type="xstring" value="CITY_GETTIME"/>
+<entry key="20" type="xstring" value="POWER_TYPES"/>
+<entry key="21" type="xstring" value="POLITIVE"/>
+<entry key="22" type="xstring" value="PERSON_TYPE"/>
+<entry key="23" type="xstring" value="TELEPHONE"/>
+<entry key="24" type="xstring" value="MOBILE"/>
+<entry key="25" type="xstring" value="IS_GETCODE"/>
+<entry key="26" type="xstring" value="EMAIL"/>
+<entry key="27" type="xstring" value="EXAMINE_TIME"/>
+<entry key="28" type="xstring" value="UPDATE_TIME"/>
+<entry key="29" type="xstring" value="CREATE_TIME_"/>
+<entry key="30" type="xstring" value="CREATE_ID"/>
+<entry key="31" type="xstring" value="UPDATE_ID"/>
+<entry key="32" type="xstring" value="EXAMINE_ID"/>
+<entry key="33" type="xstring" value="DIS_EXAMINE_TIME"/>
+<entry key="34" type="xstring" value="EFFECTIVE_TIME"/>
+<entry key="35" type="xstring" value="ENFORCE_TYPE"/>
+<entry key="36" type="xstring" value="WORK_UNIT"/>
+<entry key="37" type="xstring" value="DEPT_EFFECTIVE_TIME"/>
+<entry key="38" type="xstring" value="ENTRUST_ID"/>
+<entry key="39" type="xstring" value="RESOURCE_TYPE"/>
+<entry key="40" type="xstring" value="JOB_CLASS"/>
+<entry key="41" type="xstring" value="DELETE_TIME"/>
+<entry key="42" type="xstring" value="IS_LAWCODE"/>
+<entry key="43" type="xstring" value="PHOTO"/>
+<entry key="44" type="xstring" value="CODE_TYPE"/>
+<entry key="45" type="xstring" value="DEPT_GETTIME_BEGIN"/>
+<entry key="46" type="xstring" value="DEPT_GETTIME_END"/>
+<entry key="47" type="xstring" value="DEPT_GETTIME_OFFICE"/>
+<entry key="48" type="xstring" value="CITY_GETTIME_BEGIN"/>
+<entry key="49" type="xstring" value="CITY_GETTIME_END"/>
+<entry key="50" type="xstring" value="CITY_GETTIME_OFFICE"/>
+<entry key="51" type="xstring" value="DEPT_NAME"/>
+<entry key="52" type="xstring" value="MAJOR"/>
+<entry key="53" type="xstring" value="IS_PUBLIC"/>
+<entry key="54" type="xstring" value="CREATE_TIME"/>
+<entry key="55" type="xstring" value="Year"/>
+<entry key="56" type="xstring" value="ShiftDate"/>
+<entry key="57" type="xstring" value="Year (#1)"/>
+<entry key="58" type="xstring" value="AGE"/>
+<entry key="59" type="xstring" value="AGE_LOWER_BOUND"/>
+<entry key="60" type="xstring" value="AGE_UPPER_BOUND"/>
+<entry key="61" type="xstring" value="AGE_RANGE"/>
+<entry key="62" type="xstring" value="EDU_MAPPING"/>
+<entry key="63" type="xstring" value="JOBCLASS_MAPPING"/>
+<entry key="64" type="xstring" value="TYPE_MAPPING"/>
+<entry key="65" type="xstring" value="POLITIC_MAPPING"/>
+</config>
+<config key="rightIncludeCols">
+<entry key="array-size" type="xint" value="2"/>
+<entry key="0" type="xstring" value="SEX_CODE"/>
+<entry key="1" type="xstring" value="SEX_MAPPING"/>
+</config>
+<entry key="leftIncludeAll" type="xboolean" value="true"/>
+<entry key="rightIncludeAll" type="xboolean" value="true"/>
+<entry key="rmLeftJoinCols" type="xboolean" value="false"/>
+<entry key="rmRightJoinCols" type="xboolean" value="true"/>
+<entry key="maxOpenFiles" type="xint" value="200"/>
+<entry key="rowKeySeparator" type="xstring" value="_"/>
+<entry key="enableHiLite" type="xboolean" value="false"/>
+<entry key="numBitsInitial" type="xint" value="6"/>
+<entry key="numBitsMaximal" type="xint" value="32"/>
+<entry key="usedMemoryThreshold" type="xdouble" value="0.85"/>
+<entry key="minAvailableMemory" type="xlong" value="10000000"/>
+<entry key="memUseCollectionUsage" type="xboolean" value="true"/>
+<entry key="version" type="xstring" value="version_3"/>
+</config>
+<config key="nodeAnnotation">
+<entry key="text" type="xstring" value="连结"/>
+<entry key="bgcolor" type="xint" value="16777215"/>
+<entry key="x-coordinate" type="xint" value="1948"/>
+<entry key="y-coordinate" type="xint" value="1779"/>
+<entry key="width" type="xint" value="106"/>
+<entry key="height" type="xint" value="15"/>
+<entry key="alignment" type="xstring" value="CENTER"/>
+<entry key="borderSize" type="xint" value="0"/>
+<entry key="borderColor" type="xint" value="16777215"/>
+<entry key="defFontSize" type="xint" value="9"/>
+<entry key="annotation-version" type="xint" value="20151123"/>
+<config key="styles"/>
+</config>
+<entry key="customDescription" type="xstring" isnull="true" value=""/>
+<entry key="state" type="xstring" value="IDLE"/>
+<entry key="factory" type="xstring" value="org.knime.base.node.preproc.joiner.Joiner2NodeFactory"/>
+<entry key="node-name" type="xstring" value="Joiner"/>
+<entry key="node-bundle-name" type="xstring" value="KNIME Base Nodes"/>
+<entry key="node-bundle-symbolic-name" type="xstring" value="org.knime.base"/>
+<entry key="node-bundle-vendor" type="xstring" value="KNIME AG, Zurich, Switzerland"/>
+<entry key="node-bundle-version" type="xstring" value="4.0.0.v201906241150"/>
+<entry key="node-feature-name" type="xstring" value="KNIME Core"/>
+<entry key="node-feature-symbolic-name" type="xstring" value="org.knime.features.base.feature.group"/>
+<entry key="node-feature-vendor" type="xstring" value="KNIME AG, Zurich, Switzerland"/>
+<entry key="node-feature-version" type="xstring" value="4.0.0.v201906261003"/>
+<config key="factory_settings"/>
+<entry key="name" type="xstring" value="Joiner"/>
+<entry key="hasContent" type="xboolean" value="false"/>
+<entry key="isInactive" type="xboolean" value="false"/>
+<config key="ports">
+<config key="port_1">
+<entry key="index" type="xint" value="1"/>
+<entry key="port_dir_location" type="xstring" isnull="true" value=""/>
+</config>
+</config>
+<config key="filestores">
+<entry key="file_store_location" type="xstring" isnull="true" value=""/>
+<entry key="file_store_id" type="xstring" isnull="true" value=""/>
+</config>
+</config>
