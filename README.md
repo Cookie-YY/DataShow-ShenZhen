@@ -12,11 +12,11 @@
 ### 启动程序：
 - `cd command`
 - `python commanmain.py [options]`：默认不启动标准抽取
-    - `-h --help`: 查看帮助
-    - `-a --apply`：执行主程序前应用用户设置（setting.json）
-    - `-i --include`：接受参数0，1，2，3（可多选，无连接）
+    - **`-h --help`**: 查看帮助
+    - **`-a --apply`**：执行主程序前应用用户设置（setting.json）
+    - **`-i --include`**：接受参数0，1，2，3（可多选，无连接）
         - 如`python main.py -i 0123`：启动标准抽取(0)，数据收取(1)，数据计算(2)，数据更新(3)
-    - `-s --skip`：接受参数1,2,3
+    - **`-s --skip`**：接受参数1,2,3
         - 如`python main.py -s 23`：只启动数据抽取（默认启动1，2，3）
 
 ### 文件目录说明datashow
@@ -73,6 +73,9 @@
         - 路径：oracle驱动路径（默认：core/ojdbc8.jar）
 
 > 注：数据库配置信息中的密码是经过工具加密的
+
 > 注：theme文件夹可删，每次执行会自动创建result/theme
+
 > 注：excute_log文件夹可删，每次执行会自动创建command/excute_log
+
 > 注：windows下路径需要以两个反斜线分隔
