@@ -32,7 +32,7 @@
             - data_extract_order：用于存放数据抽取得到业务库的顺序
             - standard_extract_order：用于存放标准抽取得到标准库的顺序
         - package：用于存放依赖脚本
-            - __init__.py：包文件头
+            - `__init__.py`：包文件头
             - app_change.py：根据用户设置更改程序主体脚本
             - base.py：所有脚本的基类（一些公共方法）
             - theme2json_*.py：修改大屏页面脚本
