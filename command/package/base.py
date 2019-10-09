@@ -100,17 +100,16 @@ class WorkflowStart(SourcePath, SettingsInfo):
         with open(os.path.join(path_order, filename+'_order'), 'r', encoding='utf-8') as ord:
             workflow_list = [os.path.join(self.path_base, 'workflow', filename, i.strip()) for i in ord.readlines()]
         with open(os.path.join(self.path_base, 'command', 'excute_log', filename), 'a', encoding='utf-8') as f:
-            f.write(str(datetime.datetime.now()))
+            f.write('执行时间:' + str(datetime.datetime.now()) + '\n')
             t0 = time.time()
             for workflow in workflow_list:
                 t = time.time()
                 os.system(self.command % workflow)
                 t_ = time.time()
                 f.write(workflow + '-----------'+str(int(t_-t)) + '\n')
-            f.write('-----------' + str(int(time.time()-t0)) + '-----------')
-            f.write(str(datetime.datetime.now()))
-            f.write('----------------------')
-            f.write('----------------------')
+            f.write('-----------' + str(int(time.time()-t0)) + '-----------' + '\n')
+            f.write('----------------------' + '\n')
+            f.write('**********************\n\n')
 
 
 class BaseJsonUpdate(SourcePath, SettingsInfo):
@@ -139,6 +138,7 @@ class BaseJsonUpdate(SourcePath, SettingsInfo):
         self.order_enforcepeo_politic = self.get_order('standard_staff_politic.csv')
         self.order_enforcepeo_sex = self.get_order('standard_staff_sex.csv')
         self.order_enforcepeo_age = self.get_order('standard_staff_age.csv')
+        self.order_code_all = [1.0, 2.0, 3.0]
         # 标准-处罚案件
         self.order_punish_way = ["罚款", '行政拘留', '吊销许可证执照', '暂扣',
                                  '责令停产停业', '没收非法所得/没收非法财物',
@@ -150,6 +150,8 @@ class BaseJsonUpdate(SourcePath, SettingsInfo):
         self.order_punish_dangshirentype_after[0] = "自然人"
         self.order_punish_dangshirentype_after.insert(0, "个体工商户")
         self.order_punish_seg = self.get_order('standard_punish_seg.csv')
+        self.order_punish_closestate = self.get_order('standard_punish_closestate.csv')
+        self.order_punish_enforcetype = [1, 2, 3][::-1]  # 分别代表 予以处罚，不予处罚，撤销立案---倒序进行测试
         self.order_punish_type = [1, 2]
         # 标准-职权
         self.order_power_type = self.get_order('standard_power_type.csv')
@@ -159,7 +161,7 @@ class BaseJsonUpdate(SourcePath, SettingsInfo):
         ######################################################################################################
         # 映射
         self.time_mapping = {
-            "month": ([str(i) + '月' for i in range(1, 13)], "当年"),
+            "month": ([str(i) + '月' for i in range(1, 13)], "月度"),
             "quarter": (['第一季度', '第二季度', '第三季度', '第四季度'], "季度"),
             "halfyear": (['上半年', '下半年'], "半年")}
         self.punishtype_mapping = {
@@ -167,12 +169,18 @@ class BaseJsonUpdate(SourcePath, SettingsInfo):
             "abnorm": {"1": "generalLaw", "2": "easyLaw"},
             "chinese": {"1": "一般", "2": "简易"},
             "chinesefull": {"1": "一般案件", "2": "简易案件"}}
+        self.punish_enforcetype_mapping = {
+            "1": "zccf",  # 予以处罚（做出处罚）
+            "2": "bycf",  # 不予处罚
+            "3": "zcal"  # 撤销立案（总撤案量）
+        }
         self.powertype_mapping = {i: "qt" for i in self.order_power_type}
         self.powertype_mapping["行政处罚"] = "cf"
         self.powertype_mapping["行政许可"] = "xk"
         self.powertype_mapping["行政强制"] = "qz"
         self.powertype_mapping["行政检查"] = "jcs"
         self.lawtype_mapping = {"法律": "flValue", "行政法规": "xzfgValue", "特区法规": "tqfgValue", "部门规章": "bmgzValue", "地方性法规": "dfxfgValue", "政府规章": "zfgzValue", "其他": "qtValue"}
+        self.enforcepeocode_mapping = {"1": "单证件", "2": "双证件", "3": "三证件"}
 
     def get_order(self, order_name):
         list_ = pd.read_csv(os.path.join(self.path_standard, order_name)).iloc[:, 2].dropna().values
@@ -211,15 +219,15 @@ class JsonUpdate(BaseJsonUpdate):
 
         # 其他分类
         cat_list = ["ENFORCEPEO_EDU", "ENFORCEPEO_JOBCLASS", "ENFORCEPEO_STAFFTYPE",
-                    "ENFORCEPEO_POLITIC", "ENFORCEPEO_SEX", "ENFORCEPEO_AGE",
+                    "ENFORCEPEO_POLITIC", "ENFORCEPEO_SEX", "ENFORCEPEO_AGE", "CODE_ALL",
                     "POWER_TYPE",
                     "ORG_LEVEL",
                     "SUB_LEVEL",
                     "LAW_TYPE",
                     "MONTH", "QUARTER", "HALFYEAR",
                     "PUNISH_SOURCE", "PUNISH_DANGSHIRENTYPE_BEFORE", "PUNISH_DANGSHIRENTYPE_AFTER" ,
-                    "PUNISH_TYPE", "PUNISH_SEG"
-
+                    "PUNISH_TYPE", "PUNISH_SEG", "PUNISH_CLOSESTATE",
+                    "PUNISH_ENFORCETYPE"
                     ]
         command_find = """%s_name = [i for i in list(df.columns) if i == "%s"]"""
         command_change = """self.change_category(df, %s_name, self.order_%s)"""
@@ -228,23 +236,34 @@ class JsonUpdate(BaseJsonUpdate):
             exec(command_change % (cat.lower(), cat.lower()))
         return df
 
-    def get_value(self, df, col, multi=1, jduge_sum=False):
+    def get_value(self, df, col, multi=1, type_= 'float', jduge_sum=False):
         """
-        :param df:
-        :param col:
-        :param jduge_sum: 最后分组之后是否求和
-        :param jduge_float: 最后分组之后是否是浮点数（保留小数位数，默认整数）
+        :param df: 指定数据表
+        :param col: 指定列
+        :param multi: 结果返回前乘以相应倍数（用于返回百分比）
+        :param jduge_sum: 最后分组之后是否求和（用于按照大屏分类之后，对分类继续分类（职权的分类-其他））
         :return: 空值以0填充
         """
         df[col].fillna(0, inplace=True)
-        if not jduge_sum:
-            try:
-                return round(float(df[col]) * multi, self.sig_dig) if any(df[col]) else 0
-            except:
-                print('ATTENTION!!!, USING SUM() AFTER GROUPBY')
+        if type_ == "str":
+            return df[col].iloc[0] if any(df[col]) else "None"
+        elif type_ == "float":
+            if not jduge_sum:
+                try:
+                    return round(float(df[col]) * multi, self.sig_dig) if any(df[col]) else 0
+                except:
+                    print('ATTENTION!!!, USING SUM() AFTER GROUPBY(WHILE NOT SPECIFIED PARAMETER jduge_sum)')
+                    return round(float(sum(df[col])) * multi, self.sig_dig) if any(df[col]) else 0
+            else:
                 return round(float(sum(df[col])) * multi, self.sig_dig) if any(df[col]) else 0
         else:
-            return round(float(sum(df[col])) * multi, self.sig_dig) if any(df[col]) else 0
+            print('ATTENTION!!!, WRONG PARAMETER')
+    @staticmethod
+    def get_df1row(df):
+        try:
+            return df.iloc[[0]]
+        except:
+            return df
 
     @staticmethod
     def get_df(df):
@@ -274,12 +293,13 @@ class PyStart(SettingsInfo):
         t0 = time.time()
         log_path = os.path.join(self.path_base, 'command', 'excute_log')
         with open(os.path.join(log_path, 'json_update'), 'a', encoding='utf-8') as f:
+            f.write('执行时间:' + str(datetime.datetime.now()) + '\n')
             for py in python_list:
                 t = time.time()
                 os.system(self.path_python + ' ' + os.path.join(self.path_base, 'command', 'package', py))
                 t_ = time.time()
                 f.write(py + '-----------' + str(int(t_ - t)) + '\n')
-            f.write('-----------' + str(int(time.time() - t0)) + '-----------')
-            f.write('----------------------')
-            f.write('----------------------')
+            f.write('-----------' + str(int(time.time() - t0)) + '-----------\n')
+            f.write('----------------------' + '\n')
+            f.write('**********************\n\n')
 

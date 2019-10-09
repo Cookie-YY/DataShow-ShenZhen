@@ -12,19 +12,25 @@ import os
 ju = JsonUpdate()
 
 # 只分年
-aspect_year = ["_tongbi", "_huanbi",  # 放在一起
-               "_punishway", "_type", "_power",  # 很奇怪
-               "_dangshirentypebefore", "_dangshirentypeafter", "_source", "_seg",   # 方法统一
-               "_month_type", "_quarter_type", "_halfyear_type",  # 放在一起
-               "_closestate"]  # 先不做
+aspect_year = [
+    "_tongbi", "_huanbi",  # 放在一起
+    "_punishway", "_type", "_power",  # 很奇怪
+    "_dangshirentypebefore", "_dangshirentypeafter", "_source", "_seg",   # 方法统一
+    "_month_type", "_quarter_type", "_halfyear_type",  # 放在一起
+    "_month_type_fine", "_quarter_type_fine", "_halfyear_type_fine",  # 放在一起
+    "_cycledays_yanqi", "_cycledays_all",
+    "_closestate"]
 # 只分行业
-aspect_year_hangye = ["_perpeo", "_fine",  # 单搞
-                      "_banan", "_bianzhi", "_chizheng",  # 放在一起
-                      "_powerbalance", "_power",  # 放在一起
-                      "_type",  # 单搞
-                      "_cycledays_yanqi", "_cycledays_all"]
+aspect_year_hangye = [
+    "_perpeo", "_type_fine",  # 单搞
+    "_banan", "_bianzhi", "_chizheng",  # 放在一起
+    "_powerbalance", "_power",  # 放在一起
+    "_type",  # 单搞
+    "_cycledays_yanqi", "_cycledays_all",
+    "_enforcetype"]
 # 只分区划和行业区划
-aspect_quyu_hangyequyu = ["_perpeo", "_type", "_powerbalance", "_power", "_fine"]
+aspect_quyu_hangyequyu = [
+    "_perpeo", "_type", "_powerbalance", "_power", "_type_fine", "_enforcetype"]
 # 分年
 command_year = \
     """
@@ -54,17 +60,25 @@ punish_cycledays_columns = punish_year_hangye_cycledays_all_isga.columns.values 
 power_year_isga = ju.get_category(pd.read_csv(os.path.join(ju.path_source_power, 'year_isga.csv')))  # 读取各年职权总数-含公安
 power_year_nonega = ju.get_category(pd.read_csv(os.path.join(ju.path_source_power, 'year_nonega.csv')))  # 读取各年职权总数-无公安
 
-# 为了实验（需要各年各行业，各区划的总数，之后前端会修改，计算的总数都分种类了）
-punish_year_hangye_isga = ju.get_category(pd.read_csv(os.path.join(ju.path_source_punish, 'year_hangye_isga.csv')))  # 读取各年职权总数-无公安
-punish_year_quyu_isga = ju.get_category(pd.read_csv(os.path.join(ju.path_source_punish, 'year_quyu_isga.csv')))  # 读取各年职权总数-无公安
-punish_year_hangye_nonega = ju.get_category(pd.read_csv(os.path.join(ju.path_source_punish, 'year_hangye_nonega.csv')))  # 读取各年职权总数-无公安
-punish_year_quyu_nonega = ju.get_category(pd.read_csv(os.path.join(ju.path_source_punish, 'year_quyu_nonega.csv')))  # 读取各年职权总数-无公安
+# 吻合度（不分是否含公安）
+punish_year_hangye_whd_code_isga = ju.get_category(pd.read_csv(os.path.join(ju.path_source_punish, 'year_hangye_whd_code_isga.csv')))
+punish_year_quyu_whd_code_isga = ju.get_category(pd.read_csv(os.path.join(ju.path_source_punish, 'year_quyu_whd_code_isga.csv')))
+punish_year_hangye_quyu_whd_code_isga = ju.get_category(pd.read_csv(os.path.join(ju.path_source_punish, 'year_hangye_quyu_whd_code_isga.csv')))
+punish_year_hangye_type_whd_code_isga = ju.get_category(pd.read_csv(os.path.join(ju.path_source_punish, 'year_hangye_type_whd_code_isga.csv')))
+punish_year_quyu_type_whd_code_isga = ju.get_category(pd.read_csv(os.path.join(ju.path_source_punish, 'year_quyu_type_whd_code_isga.csv')))
+punish_year_hangye_quyu_type_whd_code_isga = ju.get_category(pd.read_csv(os.path.join(ju.path_source_punish, 'year_hangye_quyu_type_whd_code_isga.csv')))
+
+# # 为了实验（需要各年各行业，各区划的总数，之后前端会修改，计算的总数都分种类了）
+# punish_year_hangye_isga = ju.get_category(pd.read_csv(os.path.join(ju.path_source_punish, 'year_hangye_isga.csv')))  # 读取各年职权总数-无公安
+# punish_year_quyu_isga = ju.get_category(pd.read_csv(os.path.join(ju.path_source_punish, 'year_quyu_isga.csv')))  # 读取各年职权总数-无公安
+# punish_year_hangye_nonega = ju.get_category(pd.read_csv(os.path.join(ju.path_source_punish, 'year_hangye_nonega.csv')))  # 读取各年职权总数-无公安
+# punish_year_quyu_nonega = ju.get_category(pd.read_csv(os.path.join(ju.path_source_punish, 'year_quyu_nonega.csv')))  # 读取各年职权总数-无公安
 
 
 # 以下，按照大屏顺序：
 #####################################################################################
 # 行政处罚案件量json
-"全行业行政处罚案件量分析（含二级）"
+"各行业行政处罚案件量分析（含二级）"
 tradePunish, tradePunishErji = [], []
 command_tradePunish = \
     """
@@ -89,7 +103,7 @@ for group_name, group_data in punish_year_hangye_quyu_type_%.groupby('YEAR'):
             hangye_quyu_one.append(hangye_quyu_one_this)
         tradePunishErji.append({"year": int(group_name), "dep": group_name_, "data": hangye_quyu_one})
 """
-"全市区行政处罚案件量分析（含二级）"
+"各区划行政处罚案件量分析（含二级）"
 cityPunish, cityPunishErji = [], []
 command_cityPunish = \
     """
@@ -118,7 +132,7 @@ for group_name, group_data in punish_year_hangye_quyu_type_%.groupby('YEAR'):
 yearsPunish = {}
 years, trade, city = [], [], []
 command_yearsPunish = \
-"""
+    """
 # years 部分 是否含公安
 years_data = []
 for group_name, group_data in punish_year_type_%.groupby('YEAR'):
@@ -139,10 +153,10 @@ for group_name, group_data in punish_year_hangye_type_%.groupby('PUNISH_HANGYE')
             trade_this[str(int(group_name__))] = ju.get_value(group_data__, 'SUM(*)')
         trade_data.append(trade_this)
 # 总案件量
-for group_name, group_data in punish_year_hangye_%.groupby('PUNISH_HANGYE'):
+for group_name, group_data in punish_year_hangye_type_%.groupby('PUNISH_HANGYE'):
     trade_this = {"name": group_name, "type": "总案件量"}
     for group_name_, group_data_ in group_data.groupby('YEAR'):
-        trade_this[str(int(group_name_))] = ju.get_value(group_data_, 'SUM(*)')
+        trade_this[str(int(group_name_))] = ju.get_value(group_data_, 'SUM(*)', jduge_sum=True)
     trade_data.append(trade_this)
 trade.append({"isga": ^, "data": trade_data})
 
@@ -156,13 +170,13 @@ for group_name, group_data in punish_year_quyu_type_%.groupby('PUNISH_QUYU'):
             city_this[str(int(group_name__))] = ju.get_value(group_data__, 'SUM(*)')
         city_data.append(city_this)
 # 总案件量——（其实和行业的总案件量一样，再来一遍。。。。）
-for group_name, group_data in punish_year_quyu_%.groupby('PUNISH_QUYU'):
+for group_name, group_data in punish_year_quyu_type_%.groupby('PUNISH_QUYU'):
     city_this = {"name": group_name, "type": "总案件量"}
     for group_name_, group_data_ in group_data.groupby('YEAR'):
-        city_this[str(int(group_name_))] = ju.get_value(group_data_, 'SUM(*)')
+        city_this[str(int(group_name_))] = ju.get_value(group_data_, 'SUM(*)', jduge_sum=True)
     city_data.append(city_this)
 city.append({"isga": ^, "data": city_data})
-"""
+    """
 "行政处罚案件量月趋势分析（月，季度，半年，年）"
 caseMonthlyTrend = []
 # 各月 各季 各半年
@@ -173,12 +187,15 @@ for group_name, group_data in punish_year_!_type_%.groupby('YEAR'):
     quarter_one = []
     for group_name_, group_data_ in group_data.groupby('@'):
         quarter_one_this = {"name": ju.time_mapping['!'][0][int(group_name_)-1]}
+        quarter_total = 0
         for group_name__, group_data__ in group_data_.groupby('PUNISH_TYPE'):
             quarter_one_this[ju.punishtype_mapping['norm'][str(group_name__)]] = ju.get_value(group_data__, 'SUM(*)')
+            quarter_total += ju.get_value(group_data__, 'SUM(*)')
+        quarter_one_this['total'] = quarter_total
         quarter_one.append(quarter_one_this)
     caseMonthlyTrend.append({"year": int(group_name), "isga": ^, "genre": ju.time_mapping['!'][1], "data": quarter_one})
     """
-# 各年（接口混乱）
+# 各年（接口混乱）——目前已无用（历年案件量已拆出一张新图）
 command_caseMonthlyTrend_ = \
     """
 # 历年（json里面什么鬼写法：每一年的字典里面，需要把所有年都写上，如：2015年里面有2015-2019年的数据）
@@ -205,22 +222,86 @@ for group_name, group_data in punish_year_seg_%.groupby('YEAR'):
             seg_this.append(seg_one)
         else:
             diaochaB = ju.get_value(group_data_, "SUM(*)")
+            seg_this.append(0)
         if group_name_.startswith('立案'):
             lian = ju.get_value(group_data_, "SUM(*)")
-    seg_this.append({"name": "立案阶段", "value": lian-diaochaB})
+    for ind, content in enumerate(seg_this):
+        if not content:
+            seg_this[ind] = {"name": "调查取证阶段", "value": lian-diaochaB}
+            break
     handlingOfCases.append({"year": int(group_name), "isga": ^, "data": seg_this})
+    """
+"办结类型"
+genreOfCases = []
+command_genreOfCases = \
+    """
+for group_name, group_data in punish_year_closestate_%.groupby('YEAR'):
+    closestate_all = []
+    for group_name_, group_data_ in group_data.groupby('PUNISH_CLOSESTATE'):
+        closestate_all.append({"name": group_name_, "value": ju.get_value(group_data_, 'SUM(*)')})
+    genreOfCases.append({"year": int(group_name), "isga": ^, "data": closestate_all})
     """
 "全措施分析"
 allMeasures = []
 command_allMeasures = \
     """
-# 各行业（是否公安）
+# 每一列是一个分类
 for group_name, group_data in punish_year_punishway_%.groupby('YEAR'):
     all_way_this = []
     for col_number in range(len(ju.order_punish_way)):
         all_way_this.append({"name": ju.order_punish_way[col_number], "value": ju.get_value(group_data, punish_way_columns[col_number])})
     allMeasures.append({"year": int(group_name), "isga": ^, "data": all_way_this})
     """
+"各行业执行类型分析（含二级）"
+tradeCaseGenre, tradeCaseGenreErji = [], []
+command_tradeCaseGenre = \
+    """
+# 各行业（是否公安）
+for group_name, group_data in punish_year_hangye_enforcetype_%.groupby('YEAR'):
+    hangye_one = []
+    for group_name_, group_data_ in group_data.groupby('PUNISH_HANGYE'):
+        hangye_one_this = {"name": group_name_}
+        for group_name__, group_data__ in group_data_.groupby('PUNISH_ENFORCETYPE'):
+            hangye_one_this[ju.punish_enforcetype_mapping[str(int(group_name__))]] = ju.get_value(group_data__, 'SUM(*)')
+        hangye_one.append(hangye_one_this)
+    tradeCaseGenre.append({"year": int(group_name), "isga": ^, "data": hangye_one})
+
+# 各行业各区划
+for group_name, group_data in punish_year_hangye_quyu_enforcetype_%.groupby('YEAR'):
+    for group_name_, group_data_ in group_data.groupby('PUNISH_HANGYE'):
+        hangye_quyu_one = []
+        for group_name__, group_data__ in group_data_.groupby('PUNISH_QUYU'):
+            hangye_quyu_one_this = {"name": group_name__}
+            for group_name___, group_data___ in group_data__.groupby('PUNISH_ENFORCETYPE'):
+                hangye_quyu_one_this[ju.punish_enforcetype_mapping[str(int(group_name___))]] = ju.get_value(group_data___, 'SUM(*)')
+            hangye_quyu_one.append(hangye_quyu_one_this)
+        tradeCaseGenreErji.append({"year": int(group_name), "dep": group_name_, "data": hangye_quyu_one})
+"""
+"各区划执行类型分析（含二级）"
+cityCaseGenre, cityCaseGenreErji = [], []
+command_cityCaseGenre = \
+    """
+# 各区划（是否公安）
+for group_name, group_data in punish_year_quyu_enforcetype_%.groupby('YEAR'):
+    quyu_one = []
+    for group_name_, group_data_ in group_data.groupby('PUNISH_QUYU'):
+        quyu_one_this = {"name": group_name_}
+        for group_name__, group_data__ in group_data_.groupby('PUNISH_ENFORCETYPE'):
+            quyu_one_this[ju.punish_enforcetype_mapping[str(int(group_name__))]] = ju.get_value(group_data__, 'SUM(*)')
+        quyu_one.append(quyu_one_this)
+    cityCaseGenre.append({"year": int(group_name), "isga": ^, "data": quyu_one})
+
+# 各区划各行业（是否公安）
+for group_name, group_data in punish_year_hangye_quyu_enforcetype_%.groupby('YEAR'):
+    for group_name_, group_data_ in group_data.groupby('PUNISH_QUYU'):
+        hangye_quyu_one = []
+        for group_name__, group_data__ in group_data_.groupby('PUNISH_HANGYE'):
+            hangye_quyu_one_this = {"name": group_name__}
+            for group_name___, group_data___ in group_data__.groupby('PUNISH_ENFORCETYPE'):
+                hangye_quyu_one_this[ju.punish_enforcetype_mapping[str(int(group_name___))]] = ju.get_value(group_data___, 'SUM(*)')
+            hangye_quyu_one.append(hangye_quyu_one_this)
+        cityCaseGenreErji.append({"year": int(group_name), "isga": ^, "dep": group_name_, "data": hangye_quyu_one})
+"""
 "行政处罚案件来源分析"
 punissoanylisLeftPie = []
 command_punissoanylisLeftPie = \
@@ -252,29 +333,86 @@ for group_name, group_data in punish_year_dangshirentypeafter_%.groupby('YEAR'):
         dangshiren_one.append({"name": group_name_, "value": ju.get_value(group_data_, 'SUM(*)')})
     objectlawAfter.append({"year": int(group_name), "isga": ^, "data": dangshiren_one})
     """
-"案件处罚金额分析！！？？（方法名和内容不对应）"
-punishSouce = []
-command_punishSouce = \
-    """
-for group_name, group_data in punish_year_hangye_fine_%.groupby('YEAR'):
-    fine_hangye_this = []
-    for group_name_, group_data_ in group_data.groupby('PUNISH_HANGYE'):
-        fine_hangye_this.append({"name": group_name_, "value": ju.get_value(group_data_, "SUM(*)")})
-    punishSouce.append({"year": int(group_name), "isga": ^, "data": fine_hangye_this})
-    """
 #####################################################################################
 # 行政处罚金额json
-"行政处罚金额月趋势分析——暂无"
-"全行业行政处罚金额分析——同案件处罚金额分析"
-"全市区行政处罚金额分析"
-cityPunishMoney = []
+"行政处罚金额月趋势分析"
+punishMonthTrend = []
+command_punishMonthTrend = \
+    """
+# 月/季/半年
+for group_name, group_data in punish_year_!_type_fine_%.groupby('YEAR'):
+    quarter_one = []
+    for group_name_, group_data_ in group_data.groupby('@'):
+        quarter_one_this = {"name": ju.time_mapping['!'][0][int(group_name_)-1]}
+        quarter_total = 0
+        for group_name__, group_data__ in group_data_.groupby('PUNISH_TYPE'):
+            quarter_one_this[ju.punishtype_mapping['norm'][str(group_name__)]] = ju.get_value(group_data__, 'SUM(*)')
+            quarter_total += ju.get_value(group_data__, 'SUM(*)')
+        quarter_one_this['total'] = quarter_total
+        quarter_one.append(quarter_one_this)
+    punishMonthTrend.append({"year": int(group_name), "isga": ^, "genre": ju.time_mapping['!'][1], "data": quarter_one})
+    """
+"各行业行政处罚金额分析"
+tradePunishMoney, tradePunishMoneyErji = [], []
+command_tradePunishMoney = \
+    """
+# 各行业
+for group_name, group_data in punish_year_hangye_type_fine_%.groupby('YEAR'):
+    fine_hangye_this = []
+    for group_name_, group_data_ in group_data.groupby('PUNISH_HANGYE'):
+        total_fine = 0
+        data_dict = {"name": group_name_}
+        for group_name__, group_data__ in group_data_.groupby('PUNISH_TYPE'):
+            data_dict[ju.punishtype_mapping['norm'][str(int(group_name__))]] = ju.get_value(group_data__, "SUM(*)")
+            total_fine += ju.get_value(group_data__, "SUM(*)")
+        data_dict['total'] = total_fine 
+        fine_hangye_this.append(data_dict)
+    tradePunishMoney.append({"year": int(group_name), "isga": ^, "data": fine_hangye_this})
+
+# 各行业各区划
+for group_name, group_data in punish_year_hangye_quyu_type_fine_%.groupby('YEAR'):
+    for group_name_, group_data_ in group_data.groupby('PUNISH_HANGYE'):
+        fine_hangye_quyu_this = []
+        for group_name__, group_data__ in group_data_.groupby('PUNISH_QUYU'):
+            total_fine = 0
+            data_dict = {"name": group_name__}
+            for group_name___, group_data___ in group_data__.groupby('PUNISH_TYPE'):
+                data_dict[ju.punishtype_mapping['norm'][str(int(group_name___))]] = ju.get_value(group_data___, "SUM(*)")
+                total_fine += ju.get_value(group_data___, "SUM(*)")
+            data_dict['total'] = total_fine 
+            fine_hangye_quyu_this.append(data_dict)
+        tradePunishMoneyErji.append({"year": int(group_name), "dep": group_name_, "isga": ^, "data": fine_hangye_quyu_this})
+    """
+"各区划行政处罚金额分析"
+cityPunishMoney, cityPunishMoneyErji = [], []
 command_cityPunishMoney = \
     """
-for group_name, group_data in punish_year_quyu_fine_%.groupby('YEAR'):
+# 各区划
+for group_name, group_data in punish_year_quyu_type_fine_%.groupby('YEAR'):
     fine_quyu_this = []
     for group_name_, group_data_ in group_data.groupby('PUNISH_QUYU'):
-        fine_quyu_this.append({"name": group_name_, "value": ju.get_value(group_data_, "SUM(*)")})
+        total_fine= 0
+        data_dict = {"name": group_name_}
+        for group_name__, group_data__ in group_data_.groupby('PUNISH_TYPE'):
+            data_dict[ju.punishtype_mapping['norm'][str(int(group_name__))]] = ju.get_value(group_data__, "SUM(*)")
+            total_fine += ju.get_value(group_data__, "SUM(*)")
+        data_dict['total'] = total_fine 
+        fine_quyu_this.append(data_dict)
     cityPunishMoney.append({"year": int(group_name), "isga": ^, "data": fine_quyu_this})
+
+# 各区划各行业
+for group_name, group_data in punish_year_hangye_quyu_type_fine_%.groupby('YEAR'):
+    for group_name_, group_data_ in group_data.groupby('PUNISH_QUYU'):
+        fine_quyu_hangye_this = []
+        for group_name__, group_data__ in group_data_.groupby('PUNISH_HANGYE'):
+            total_fine= 0
+            data_dict = {"name": group_name__}
+            for group_name___, group_data___ in group_data__.groupby('PUNISH_TYPE'):
+                data_dict[ju.punishtype_mapping['norm'][str(int(group_name___))]] = ju.get_value(group_data___, "SUM(*)")
+                total_fine += ju.get_value(group_data___, "SUM(*)")
+            data_dict['total'] = total_fine 
+            fine_quyu_hangye_this.append(data_dict)
+        cityPunishMoneyErji.append({"year": int(group_name), "dep": group_name_, "isga": ^, "data": fine_quyu_hangye_this})
     """
 #####################################################################################
 # 人均处罚量json
@@ -295,7 +433,7 @@ for group_data1, group_data2, group_data3, group_data4 in zip(punish_year_hangye
         zhifa_this.append(zhifa_this_one)
     rateOfFrontLineExecutor.append({"year": int(group_data1[0]), "isga": ^, "data": zhifa_this})
     """
-"全行业人均处罚量分析"
+"各行业人均处罚量分析"
 tradePerPunish, tradePerPunishErji = [], []
 command_tradePerPunish = \
     """
@@ -314,7 +452,7 @@ for group_name, group_data in punish_year_hangye_quyu_perpeo_%.groupby('YEAR'):
             perpeo_hangyequyu_one.append({"name": group_name__, "value": round(ju.get_value(group_data__, 'CASE_PER_PEO'),2)})
         tradePerPunishErji.append({"year": int(group_name),  "dep": group_name_, "data": perpeo_hangyequyu_one})
     """
-"全市区人均处罚量分析"
+"各区划人均处罚量分析"
 cityPerPunish, cityPerPunishErji = [], []
 command_cityPerPunish = \
     """
@@ -337,7 +475,7 @@ for group_name, group_data in punish_year_hangye_quyu_perpeo_%.groupby('YEAR'):
 "办案强度分析——暂无"
 #####################################################################################
 # 职权履行情况json
-"全行业职权履行情况分析(均衡率，使用率，总数)(含二级）"
+"各行业职权履行情况分析(均衡率，使用率，总数)(含二级）"
 tradePowerPerform, tradePowerPerformErji = [], []
 command_tradePowerPerform = \
     """
@@ -366,7 +504,7 @@ for group_data1, group_data2 in zip(punish_year_hangye_quyu_power_%.groupby('YEA
             power_hangye_quyu_info.append(power_hangye_quyu_info_one)
         tradePowerPerformErji.append({"year": int(group_data1[0]), "dep": group_data1_[0], "data": power_hangye_quyu_info})
     """
-"全市区职权履行情况分析(均衡率，使用率，总数)(含二级）"
+"各区划职权履行情况分析(均衡率，使用率，总数)(含二级）"
 cityPowerPerform, cityPowerPerformErji = [], []
 command_cityPowerPerform = \
     """
@@ -396,58 +534,6 @@ for group_data1, group_data2 in zip(punish_year_hangye_quyu_power_%.groupby('YEA
         cityPowerPerformErji.append({"year": int(group_data1[0]), "isga": ^, "dep":  group_data1_[0], "data": power_hangye_quyu_info})
 
     """
-"全行业休眠职权（含二级，分类只有处罚）"
-tradeDormancy, tradeDormancyErji = [], []
-command_tradeDormancy = \
-    """
-# 各行业
-for group_name, group_data in punish_year_hangye_power_isga.groupby('YEAR'):
-    sleep_this = []
-    for group_name_, group_data_ in group_data.groupby("PUNISH_HANGYE"):
-        sleep_this_data = {"name": group_name_, 
-                           "total": ju.get_value(group_data_, "ALL"), 
-                           "punish": ju.get_value(group_data_, "SLEEP"), 
-                           "allowance": 1, "force": 1, "check":1, "else": 1}
-        sleep_this.append(sleep_this_data)
-    tradeDormancy.append({"year": int(group_name), "data": sleep_this})
-# 各行业各区划
-for group_name, group_data in punish_year_hangye_quyu_power_isga.groupby('YEAR'):
-    for group_name_, group_data_ in group_data.groupby("PUNISH_HANGYE"):
-        sleep_this = []
-        for group_name__, group_data__ in group_data_.groupby("PUNISH_QUYU"):
-            sleep_this_data = {"name": group_name__, 
-                               "total": ju.get_value(group_data__, "ALL"), 
-                               "punish": ju.get_value(group_data__, "SLEEP"), 
-                               "allowance": 1, "force": 1, "check":1, "else": 1}
-            sleep_this.append(sleep_this_data)
-        tradeDormancyErji.append({"year": int(group_name), "dep": group_name_, "data": sleep_this})
-    """
-"全市区休眠职权（含二级，分类只有处罚）"
-cityDormancy, cityDormancyErji = [], []
-command_cityDormancy = \
-    """
-# 各区划
-for group_name, group_data in punish_year_quyu_power_isga.groupby('YEAR'):
-    sleep_this = []
-    for group_name_, group_data_ in group_data.groupby("PUNISH_QUYU"):
-        sleep_this_data = {"name": group_name_, 
-                           "total": ju.get_value(group_data_, "ALL"), 
-                           "punish": ju.get_value(group_data_, "SLEEP"), 
-                           "allowance": 1, "force": 1, "check":1, "else": 1}
-        sleep_this.append(sleep_this_data)
-    cityDormancy.append({"year": int(group_name), "data": sleep_this})
-# 各区划各行业
-for group_name, group_data in punish_year_hangye_quyu_power_isga.groupby('YEAR'):
-    for group_name_, group_data_ in group_data.groupby("PUNISH_QUYU"):
-        sleep_this = []
-        for group_name__, group_data__ in group_data_.groupby("PUNISH_HANGYE"):
-            sleep_this_data = {"name": group_name__, 
-                               "total": ju.get_value(group_data__, "ALL"), 
-                               "punish": ju.get_value(group_data__, "SLEEP"), 
-                               "allowance": 1, "force": 1, "check":1, "else": 1}
-            sleep_this.append(sleep_this_data)
-        cityDormancyErji.append({"year": int(group_name), "dep": group_name_, "data": sleep_this})
-    """
 #####################################################################################
 # 案件评查json
 
@@ -457,8 +543,13 @@ for group_name, group_data in punish_year_hangye_quyu_power_isga.groupby('YEAR')
 punishPeriod = []
 command_punishPeriod = \
     """
+for group_name, group_data in punish_year_cycledays_!_%.groupby('YEAR'):
+    cycledays_year_data = []
+    for col_number in range(len(ju.order_punish_cycledays)):
+        cycledays_year_data.append({"name": ju.order_punish_cycledays[col_number], "value": int(ju.get_value(group_data, punish_cycledays_columns[col_number]))})
+    punishPeriod.append({"year": int(group_name), "isga": ^, "dep": "全部", "genre": "@", "data": cycledays_year_data})
+
 for group_name, group_data in punish_year_hangye_cycledays_!_%.groupby('YEAR'):
-    all_way_this = []
     for group_name_, group_data_ in group_data.groupby('PUNISH_HANGYE'):
         cycledays_data = []
         for col_number in range(len(ju.order_punish_cycledays)):
@@ -467,8 +558,146 @@ for group_name, group_data in punish_year_hangye_cycledays_!_%.groupby('YEAR'):
      """
 #####################################################################################
 # 投诉举报分析json
-"全行业投诉举报吻合度——未完成"
-tradeReportCoincide = []
+"各行业投诉举报吻合度（含二级 含投诉举报前五的职权代码）"
+tradeReportCoincide, tradeReportCoincideErji = [], []
+command_tradeReportCoincide = \
+    """
+# 分行业
+# 分行业-全部案件
+for group_name, group_data in punish_year_hangye_whd_code_%.groupby('YEAR'):
+    year_hangye_whd = []
+    for group_name_, group_data_ in group_data.groupby('PUNISH_HANGYE'):
+        in_num = float(group_data_['IS_IN'].sum())
+        out_num = float(group_data_['IS_IN'].count()) - in_num
+        if not group_data_['POWER_CODE'].isnull().all():  # 如果有数
+            for code, isin, name in zip(group_data_['POWER_CODE'], group_data_['IS_IN'], group_data_['POWER_NAME']):
+                year_hangye_whd.append({"name": group_name_, "code": str(code)+' '+str(name), "type": "投诉举报", "num": in_num})
+                if isin == 0:
+                    year_hangye_whd.append({"name": group_name_, "code": str(code)+' '+str(name), "type": "处罚案件", "num": out_num})
+        else:  # 如果没数（为空）
+            year_hangye_whd.append({"name": group_name_, "code": "None", "type": "投诉举报", "num": 0})
+    tradeReportCoincide.append({"year": int(group_name), "type": "总案件量", "data": year_hangye_whd})
+
+# 分行业-一般简易
+for group_name, group_data in punish_year_hangye_type_whd_code_%.groupby('YEAR'):
+    for group_name_, group_data_ in group_data.groupby('PUNISH_TYPE'):
+        year_hangye_type_whd = []
+        for group_name__, group_data__ in group_data_.groupby('PUNISH_HANGYE'): 
+            in_num = float(group_data__['IS_IN'].sum())
+            out_num = float(group_data__['IS_IN'].count()) - in_num
+            if not group_data__['POWER_CODE'].isnull().all():  # 如果有数
+                for code, isin, name in zip(group_data__['POWER_CODE'], group_data__['IS_IN'], group_data__['POWER_NAME']):
+                    year_hangye_type_whd.append({"name": group_name__, "code": str(code)+' '+str(name), "type": "投诉举报", "num": in_num})
+                    if isin == 0:
+                        year_hangye_type_whd.append({"name": group_name__, "code": str(code)+' '+str(name), "type": "处罚案件", "num": out_num})
+            else:  # 如果没数（为空）
+                year_hangye_type_whd.append({"name": group_name__, "code": "None", "type": "投诉举报", "num": 0})
+        tradeReportCoincide.append({"year": int(group_name), "type": ju.punishtype_mapping["chinesefull"][str(int(group_name_))], "data": year_hangye_type_whd})
+
+# 分行业分区划-全部案件
+for group_name, group_data in punish_year_hangye_quyu_whd_code_%.groupby('YEAR'):
+    for group_name_, group_data_ in group_data.groupby('PUNISH_HANGYE'):
+        year_hangye_quyu_whd = []
+        for group_name__, group_data__ in group_data_.groupby('PUNISH_QUYU'):
+            in_num = float(group_data__['IS_IN'].sum())
+            out_num = float(group_data__['IS_IN'].count()) - in_num
+            if not group_data__['POWER_CODE'].isnull().all():  # 如果有数
+                for code, isin, name in zip(group_data__['POWER_CODE'], group_data__['IS_IN'], group_data__['POWER_NAME']):
+                    year_hangye_quyu_whd.append({"name": group_name__, "code": str(code)+' '+str(name), "type": "投诉举报", "num": in_num})
+                    if isin == 0:
+                        year_hangye_quyu_whd.append({"name": group_name__, "code": str(code)+' '+str(name), "type": "处罚案件", "num": out_num})
+            else:  # 如果没数（为空）
+                year_hangye_quyu_whd.append({"name": group_name__, "code": "None", "type": "投诉举报", "num": 0})
+        tradeReportCoincideErji.append({"year": int(group_name), "dep": group_name_, "type": "总案件量", "data": year_hangye_quyu_whd})
+
+
+# 分行业分区划-一般简易
+for group_name, group_data in punish_year_hangye_quyu_type_whd_code_%.groupby('YEAR'):
+    for group_name_, group_data_ in group_data.groupby('PUNISH_HANGYE'):
+        for group_name__, group_data__ in group_data_.groupby('PUNISH_TYPE'):
+            year_hangye_quyu_type_whd = []
+            for group_name___, group_data___ in group_data__.groupby('PUNISH_QUYU'):
+                in_num = float(group_data___['IS_IN'].sum())
+                out_num = float(group_data___['IS_IN'].count()) - in_num
+                if not group_data__['POWER_CODE'].isnull().all():  # 如果有数
+                    for code, isin, name in zip(group_data__['POWER_CODE'], group_data__['IS_IN'], group_data__['POWER_NAME']):
+                        year_hangye_quyu_type_whd.append({"name": group_name___, "code": str(code)+' '+str(name), "type": "投诉举报", "num": in_num})
+                        if isin == 0:
+                            year_hangye_quyu_type_whd.append({"name": group_name___, "code": str(code)+' '+str(name), "type": "处罚案件", "num": out_num})
+                else:
+                    year_hangye_quyu_type_whd.append({"name": group_name___, "code": "None", "type": "投诉举报", "num": 0})
+            tradeReportCoincideErji.append({"year": int(group_name), "dep": group_name_, "type": ju.punishtype_mapping["chinesefull"][str(int(group_name__))], "data": year_hangye_quyu_type_whd})
+    """
+"各区划投诉举报吻合度（含二级 含投诉举报前五的职权代码）"
+cityReportCoincide, cityReportCoincideErji = [], []
+command_cityReportCoincide = \
+    """
+# 分区划
+# 分区划-全部案件
+for group_name, group_data in punish_year_quyu_whd_code_%.groupby('YEAR'):
+    year_hangye_whd = []
+    for group_name_, group_data_ in group_data.groupby('PUNISH_QUYU'):
+        in_num = float(group_data_['IS_IN'].sum())
+        out_num = float(group_data_['IS_IN'].count()) - in_num
+        if not group_data_['POWER_CODE'].isnull().all():  # 如果有数
+            for code, isin, name in zip(group_data_['POWER_CODE'], group_data_['IS_IN'], group_data_['POWER_NAME']):
+                year_hangye_whd.append({"name": group_name_, "code": str(code)+' '+str(name), "type": "投诉举报", "num": in_num})
+                if isin == 0:
+                    year_hangye_whd.append({"name": group_name_, "code": str(code)+' '+str(name), "type": "处罚案件", "num": out_num})
+        else:  # 如果没数（为空）
+            year_hangye_whd.append({"name": group_name_, "code": "None", "type": "投诉举报", "num": 0})
+    cityReportCoincide.append({"year": int(group_name), "type": "总案件量", "data": year_hangye_whd})
+
+# 分区划-一般简易
+for group_name, group_data in punish_year_quyu_type_whd_code_%.groupby('YEAR'):
+    for group_name_, group_data_ in group_data.groupby('PUNISH_TYPE'):
+        year_hangye_type_whd = []
+        for group_name__, group_data__ in group_data_.groupby('PUNISH_QUYU'): 
+            in_num = float(group_data__['IS_IN'].sum())
+            out_num = float(group_data__['IS_IN'].count()) - in_num
+            if not group_data__['POWER_CODE'].isnull().all():  # 如果有数
+                for code, isin, name in zip(group_data__['POWER_CODE'], group_data__['IS_IN'], group_data__['POWER_NAME']):
+                    year_hangye_type_whd.append({"name": group_name__, "code": str(code)+' '+str(name), "type": "投诉举报", "num": in_num})
+                    if isin == 0:
+                        year_hangye_type_whd.append({"name": group_name__, "code": str(code)+' '+str(name), "type": "处罚案件", "num": out_num})
+            else:  # 如果没数（为空）
+                year_hangye_type_whd.append({"name": group_name__, "code": "None", "type": "投诉举报", "num": 0})
+        cityReportCoincide.append({"year": int(group_name), "type": ju.punishtype_mapping["chinesefull"][str(int(group_name_))], "data": year_hangye_type_whd})
+
+# 分行业分区划-全部案件
+for group_name, group_data in punish_year_hangye_quyu_whd_code_%.groupby('YEAR'):
+    for group_name_, group_data_ in group_data.groupby('PUNISH_QUYU'):
+        year_hangye_quyu_whd = []
+        for group_name__, group_data__ in group_data_.groupby('PUNISH_HANGYE'):
+            in_num = float(group_data__['IS_IN'].sum())
+            out_num = float(group_data__['IS_IN'].count()) - in_num
+            if not group_data__['POWER_CODE'].isnull().all():  # 如果有数
+                for code, isin, name in zip(group_data__['POWER_CODE'], group_data__['IS_IN'], group_data__['POWER_NAME']):
+                    year_hangye_quyu_whd.append({"name": group_name__, "code": str(code)+' '+str(name), "type": "投诉举报", "num": in_num})
+                    if isin == 0:
+                        year_hangye_quyu_whd.append({"name": group_name__, "code": str(code)+' '+str(name), "type": "处罚案件", "num": out_num})
+            else:  # 如果没数（为空）
+                year_hangye_quyu_whd.append({"name": group_name__, "code": "None", "type": "投诉举报", "num": 0})
+        cityReportCoincideErji.append({"year": int(group_name), "dep": group_name_, "type": "总案件量", "data": year_hangye_quyu_whd})
+
+
+# 分行业分区划-一般简易
+for group_name, group_data in punish_year_hangye_quyu_type_whd_code_%.groupby('YEAR'):
+    for group_name_, group_data_ in group_data.groupby('PUNISH_QUYU'):
+        for group_name__, group_data__ in group_data_.groupby('PUNISH_TYPE'):
+            year_hangye_quyu_type_whd = []
+            for group_name___, group_data___ in group_data__.groupby('PUNISH_HANGYE'):
+                in_num = float(group_data___['IS_IN'].sum())
+                out_num = float(group_data___['IS_IN'].count()) - in_num
+                if not group_data__['POWER_CODE'].isnull().all():  # 如果有数
+                    for code, isin, name in zip(group_data__['POWER_CODE'], group_data__['IS_IN'], group_data__['POWER_NAME']):
+                        year_hangye_quyu_type_whd.append({"name": group_name___, "code": str(code)+' '+str(name), "type": "投诉举报", "num": in_num})
+                        if isin == 0:
+                            year_hangye_quyu_type_whd.append({"name": group_name___, "code": str(code)+' '+str(name), "type": "处罚案件", "num": out_num})
+                else:
+                    year_hangye_quyu_type_whd.append({"name": group_name___, "code": "None", "type": "投诉举报", "num": 0})
+            tradeReportCoincideErji.append({"year": int(group_name), "dep": group_name_, "type": ju.punishtype_mapping["chinesefull"][str(int(group_name__))], "data": year_hangye_quyu_type_whd})
+    """
 "投诉举报量——暂无"
 "投诉举报重点领域分析——暂无"
 #####################################################################################
@@ -511,14 +740,18 @@ for i, j in ju.ga:
     exec(command_cityPunish.replace('%', i).replace('^', j))
     exec(command_yearsPunish.replace('%', i).replace('^', j))
     # 各月/季度/半年 单独写
-    exec(command_caseMonthlyTrend_.replace('%', i).replace('^', j))  # 历年案件量
+    # exec(command_caseMonthlyTrend_.replace('%', i).replace('^', j))  # 历年案件量——已拆出一张新图
     exec(command_handlingOfCases.replace('%', i).replace('^', j))
+    exec(command_genreOfCases.replace('%', i).replace('^', j))
     exec(command_allMeasures.replace('%', i).replace('^', j))
+    exec(command_tradeCaseGenre.replace('%', i).replace('^', j))
+    exec(command_cityCaseGenre.replace('%', i).replace('^', j))
     exec(command_punissoanylisLeftPie.replace('%', i).replace('^', j))
     exec(command_objectlawBefore.replace('%', i).replace('^', j))
     exec(command_objectlawAfter.replace('%', i).replace('^', j))
-    exec(command_punishSouce.replace('%', i).replace('^', j))
     """处罚金额json"""
+    # 处罚金额的时间趋势单写（分月/季/半年）
+    exec(command_tradePunishMoney.replace('%', i).replace('^', j))
     exec(command_cityPunishMoney.replace('%', i).replace('^', j))
     """人均处罚量json"""
     exec(command_rateOfFrontLineExecutor.replace('%', i).replace('^', j))
@@ -527,12 +760,11 @@ for i, j in ju.ga:
     """职权履行情况json"""
     exec(command_tradePowerPerform.replace('%', i).replace('^', j))
     exec(command_cityPowerPerform.replace('%', i).replace('^', j))
-    # 全行业/市区休眠没有是否公安，单独写
     """案件评查json为空"""
     """处罚周期json"""
-    # 周期单独写
+    # 处罚周期单写分全部案件/延期案件
     """投诉举报分析json"""
-    # 未完成
+    # 吻合度单写（不分是否公安）
     """左侧json"""
     exec(command_rateLeftPunishPower.replace('%', i).replace('^', j))
     exec(command_rateLeftCfzqlzl.replace('%', i).replace('^', j))
@@ -545,13 +777,15 @@ yearsPunish['city'] = city
 for time_ in ["month", "quarter", "halfyear"]:
     for i, j in ju.ga:
         exec(command_caseMonthlyTrend.replace('!', time_).replace('@', time_.upper()).replace('%', i).replace('^', j))
+        exec(command_punishMonthTrend.replace('!', time_).replace('@', time_.upper()).replace('%', i).replace('^', j))
 
 for cycle, cycle_name in zip(["all", "yanqi"], ["全部案件", "延期案件"]):
     for i, j in ju.ga:
         exec(command_punishPeriod.replace('!', cycle).replace('@', cycle_name).replace('%', i).replace('^', j))
 
-exec(command_tradeDormancy)
-exec(command_cityDormancy)
+exec(command_tradeReportCoincide.replace("%", "isga"))
+exec(command_cityReportCoincide.replace("%", "isga"))
+
 
 if __name__ == '__main__':
     content_dict_xzcfajl = {  # done
@@ -562,32 +796,39 @@ if __name__ == '__main__':
         "yearsPunish": yearsPunish,
         "caseMonthlyTrend": caseMonthlyTrend,
         "handlingOfCases": handlingOfCases,
+        "genreOfCases": genreOfCases,
         "allMeasures": allMeasures,
+        "tradeCaseGenre": tradeCaseGenre,
+        "tradeCaseGenreErji": tradeCaseGenreErji,
+        "cityCaseGenre": cityCaseGenre,
+        "cityCaseGenreErji": cityCaseGenreErji,
         "punissoanylisLeftPie": punissoanylisLeftPie,
         "objectlawBefore": objectlawBefore,
-        "objectlawAfter": objectlawAfter,
-        "punishSouce": punishSouce}
-    content_dict_xzcfje = {  # 等前端
-        "tradePunishMoney": punishSouce,
-        "cityPunishMoney": cityPunishMoney}
-    content_dict_rjcfl = {  # 等前端
+        "objectlawAfter": objectlawAfter}
+    content_dict_xzcfje = {
+        "punishMonthTrend": punishMonthTrend,
+        "tradePunishMoney": tradePunishMoney,
+        "tradePunishMoneyErji": tradePunishMoneyErji,
+        "cityPunishMoney": cityPunishMoney,
+        "cityPunishMoneyErji": cityPunishMoneyErji}
+    content_dict_rjcfl = {
         "rateOfFrontLineExecutor": rateOfFrontLineExecutor,
         "tradePerPunish": tradePerPunish,
         "tradePerPunishErji": tradePerPunishErji,
         "cityPerPunish": cityPerPunish,
         "cityPerPunishErji": cityPerPunishErji}
-    content_dict_zqlxgk = {  # 休眠只算了一年
+    content_dict_zqlxgk = {
         "tradePowerPerform": tradePowerPerform,
         "tradePowerPerformErji": tradePowerPerformErji,
         "cityPowerPerform": cityPowerPerform,
-        "cityPowerPerformErji": cityPowerPerformErji,
-        "tradeDormancy": tradeDormancy,
-        "tradeDormancyErji": tradeDormancyErji,
-        "cityDormancy": cityDormancy,
-        "cityDormancyErji": cityDormancyErji}
+        "cityPowerPerformErji": cityPowerPerformErji}
     content_dict_cfzq = {
         "punishPeriod": punishPeriod}
-
+    content_dict_tsjbfx = {
+        "tradeReportCoincide": tradeReportCoincide,
+        "tradeReportCoincideErji": tradeReportCoincideErji,
+        "cityReportCoincide": cityReportCoincide,
+        "cityReportCoincideErji": cityReportCoincideErji}
     content_dict_leftPane = {
         "rateLeftPunishPower": rateLeftPunishPower,
         "rateLeftPunishCase": rateLeftPunishCase,
@@ -598,4 +839,5 @@ if __name__ == '__main__':
     ju.json_io("rjcfl.json", content_dict_rjcfl, iscf=True)
     ju.json_io("zqlxgk.json", content_dict_zqlxgk, iscf=True)
     ju.json_io("cfzq.json", content_dict_cfzq, iscf=True)
+    ju.json_io("tsjbfx.json", content_dict_tsjbfx, iscf=True)
     ju.json_io("leftPane.json", content_dict_leftPane, iscf=True)

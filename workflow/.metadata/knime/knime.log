@@ -1,0 +1,505 @@
+2019-09-23 10:06:07,083 : WARN  : KNIME-Worker-1 :  : TipsAndNewsInjector :  :  : Could not modify intro page: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:192)
+	at sun.security.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1946)
+	at sun.security.ssl.Handshaker.fatalSE(Handshaker.java:316)
+	at sun.security.ssl.Handshaker.fatalSE(Handshaker.java:310)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1639)
+	at sun.security.ssl.ClientHandshaker.processMessage(ClientHandshaker.java:223)
+	at sun.security.ssl.Handshaker.processLoop(Handshaker.java:1037)
+	at sun.security.ssl.Handshaker.process_record(Handshaker.java:965)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1064)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1367)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1395)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1379)
+	at sun.net.www.protocol.https.HttpsClient.afterConnect(HttpsClient.java:559)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:185)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:162)
+	at org.knime.product.rcp.intro.TipsAndNewsInjector.prepareData(TipsAndNewsInjector.java:220)
+	at org.knime.product.rcp.intro.AbstractInjector.run(AbstractInjector.java:145)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:123)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:246)
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:397)
+	at sun.security.validator.PKIXValidator.engineValidate(PKIXValidator.java:302)
+	at sun.security.validator.Validator.validate(Validator.java:262)
+	at sun.security.ssl.X509TrustManagerImpl.validate(X509TrustManagerImpl.java:324)
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(X509TrustManagerImpl.java:229)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:124)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1621)
+	... 16 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.provider.certpath.SunCertPathBuilder.build(SunCertPathBuilder.java:141)
+	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(SunCertPathBuilder.java:126)
+	at java.security.cert.CertPathBuilder.build(CertPathBuilder.java:280)
+	at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:392)
+	... 22 more
+2019-09-23 10:06:51,541 : WARN  : KNIME-Worker-0 :  : TileUpdateMessageInjector :  :  : Could not modify intro page: null
+java.lang.NullPointerException
+	at org.apache.xerces.dom.ParentNode.internalRemoveChild(Unknown Source)
+	at org.apache.xerces.dom.ParentNode.removeChild(Unknown Source)
+	at org.knime.product.rcp.intro.TileUpdateMessageInjector.injectReleaseTile(TileUpdateMessageInjector.java:127)
+	at org.knime.product.rcp.intro.TileUpdateMessageInjector.injectData(TileUpdateMessageInjector.java:139)
+	at org.knime.product.rcp.intro.AbstractInjector.run(AbstractInjector.java:152)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:123)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:246)
+2019-09-23 10:07:18,588 : ERROR : ForkJoinPool.commonPool-worker-1 :  : FindLicenseServersJob :  :  : Cannot check for licenses on server 'https://api.hub.knime.com/knime/rest: unable to find valid certification path to requested target
+javax.ws.rs.ProcessingException: javax.net.ssl.SSLHandshakeException: SSLHandshakeException invoking https://api.hub.knime.com/knime/rest/v4/licenses: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at org.apache.cxf.jaxrs.client.AbstractClient.checkClientException(AbstractClient.java:582)
+	at org.apache.cxf.jaxrs.client.AbstractClient.preProcessResult(AbstractClient.java:564)
+	at org.apache.cxf.jaxrs.client.ClientProxyImpl.doChainedInvocation(ClientProxyImpl.java:719)
+	at org.apache.cxf.jaxrs.client.ClientProxyImpl.invoke(ClientProxyImpl.java:228)
+	at com.sun.proxy.$Proxy50.listAvailableLicenses(Unknown Source)
+	at com.knime.enterprise.server.rest.client.licenses.LicenseClient.listAvailableLicenses(LicenseClient.java:96)
+	at com.knime.licenses.internal.server.FindLicenseServersJob.offersLicenses(FindLicenseServersJob.java:123)
+	at com.knime.licenses.internal.server.FindLicenseServersJob.lambda$5(FindLicenseServersJob.java:110)
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:174)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175)
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175)
+	at java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.Nodes$CollectorTask.doLeaf(Nodes.java:2183)
+	at java.util.stream.Nodes$CollectorTask.doLeaf(Nodes.java:2149)
+	at java.util.stream.AbstractTask.compute(AbstractTask.java:316)
+	at java.util.concurrent.CountedCompleter.exec(CountedCompleter.java:731)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
+Caused by: javax.net.ssl.SSLHandshakeException: SSLHandshakeException invoking https://api.hub.knime.com/knime/rest/v4/licenses: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.mapException(HTTPConduit.java:1376)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.close(HTTPConduit.java:1360)
+	at org.apache.cxf.transport.AbstractConduit.close(AbstractConduit.java:56)
+	at org.apache.cxf.transport.http.HTTPConduit.close(HTTPConduit.java:651)
+	at org.apache.cxf.interceptor.MessageSenderInterceptor$MessageSenderEndingInterceptor.handleMessage(MessageSenderInterceptor.java:62)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:307)
+	at org.apache.cxf.jaxrs.client.AbstractClient.doRunInterceptorChain(AbstractClient.java:649)
+	at org.apache.cxf.jaxrs.client.ClientProxyImpl.doChainedInvocation(ClientProxyImpl.java:717)
+	... 20 more
+Caused by: javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1944)
+	at sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1939)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.net.www.protocol.http.HttpURLConnection.getChainedException(HttpURLConnection.java:1938)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1508)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:347)
+	at org.apache.cxf.transport.http.URLConnectionHTTPConduit$URLConnectionWrappedOutputStream.getResponseCode(URLConnectionHTTPConduit.java:332)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.processRetransmit(HTTPConduit.java:1424)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.handleRetransmits(HTTPConduit.java:1411)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.handleResponse(HTTPConduit.java:1545)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.close(HTTPConduit.java:1347)
+	... 26 more
+Caused by: javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:192)
+	at sun.security.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1946)
+	at sun.security.ssl.Handshaker.fatalSE(Handshaker.java:316)
+	at sun.security.ssl.Handshaker.fatalSE(Handshaker.java:310)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1639)
+	at sun.security.ssl.ClientHandshaker.processMessage(ClientHandshaker.java:223)
+	at sun.security.ssl.Handshaker.processLoop(Handshaker.java:1037)
+	at sun.security.ssl.Handshaker.process_record(Handshaker.java:965)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1064)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1367)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1395)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1379)
+	at sun.net.www.protocol.https.HttpsClient.afterConnect(HttpsClient.java:559)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:185)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1564)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)
+	at sun.net.www.protocol.http.HttpURLConnection.getHeaderFields(HttpURLConnection.java:3074)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getHeaderFields(HttpsURLConnectionImpl.java:292)
+	at org.apache.cxf.transport.http.Headers.readFromConnection(Headers.java:258)
+	at org.apache.cxf.transport.http.URLConnectionHTTPConduit$URLConnectionWrappedOutputStream.updateCookiesBeforeRetransmit(URLConnectionHTTPConduit.java:297)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.handleRetransmits(HTTPConduit.java:1409)
+	... 28 more
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:397)
+	at sun.security.validator.PKIXValidator.engineValidate(PKIXValidator.java:302)
+	at sun.security.validator.Validator.validate(Validator.java:262)
+	at sun.security.ssl.X509TrustManagerImpl.validate(X509TrustManagerImpl.java:324)
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(X509TrustManagerImpl.java:229)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:124)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1621)
+	... 44 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.provider.certpath.SunCertPathBuilder.build(SunCertPathBuilder.java:141)
+	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(SunCertPathBuilder.java:126)
+	at java.security.cert.CertPathBuilder.build(CertPathBuilder.java:280)
+	at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:392)
+	... 50 more
+2019-09-23 10:07:36,962 : ERROR : KNIME-Worker-3 :  : Node : Database Table Connector (legacy) : 0:163 : Execute failed: org.knime.core.node.InvalidSettingsException: org.knime.core.node.InvalidSettingsException: Could not find database driver "oracle.jdbc.OracleDriver", reason: oracle.jdbc.OracleDriver
+java.sql.SQLException: org.knime.core.node.InvalidSettingsException: org.knime.core.node.InvalidSettingsException: Could not find database driver "oracle.jdbc.OracleDriver", reason: oracle.jdbc.OracleDriver
+	at org.knime.core.node.port.database.DatabaseConnectionSettings.execute(DatabaseConnectionSettings.java:691)
+	at org.knime.core.node.port.database.reader.DBReaderImpl.getDataTableSpec(DBReaderImpl.java:180)
+	at org.knime.base.node.io.database.DBReaderConnectionNodeModel.execute(DBReaderConnectionNodeModel.java:132)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:567)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1192)
+	at org.knime.core.node.Node.execute(Node.java:979)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:559)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:95)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:179)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:110)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:328)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:204)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:123)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:246)
+Caused by: org.knime.core.node.InvalidSettingsException: org.knime.core.node.InvalidSettingsException: Could not find database driver "oracle.jdbc.OracleDriver", reason: oracle.jdbc.OracleDriver
+	at org.knime.core.node.port.database.connection.CachedConnectionFactory.getConnection(CachedConnectionFactory.java:212)
+	at org.knime.core.node.port.database.DatabaseConnectionSettings.createConnection(DatabaseConnectionSettings.java:474)
+	at org.knime.core.node.port.database.DatabaseConnectionSettings.execute(DatabaseConnectionSettings.java:667)
+	... 15 more
+Caused by: org.knime.core.node.InvalidSettingsException: Could not find database driver "oracle.jdbc.OracleDriver", reason: oracle.jdbc.OracleDriver
+	at org.knime.core.node.port.database.DatabaseDriverLoader.getDriver(DatabaseDriverLoader.java:190)
+	at org.knime.core.node.port.database.RegisteredDriversConnectionFactory.getDriver(RegisteredDriversConnectionFactory.java:100)
+	at org.knime.core.node.port.database.connection.CachedConnectionFactory.getConnection(CachedConnectionFactory.java:210)
+	... 17 more
+Caused by: java.lang.ClassNotFoundException: oracle.jdbc.OracleDriver
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:348)
+	at org.knime.core.node.port.database.DatabaseDriverLoader.getWrappedDriver(DatabaseDriverLoader.java:380)
+	at org.knime.core.node.port.database.DatabaseDriverLoader.getDriver(DatabaseDriverLoader.java:187)
+	... 19 more
+2019-09-23 10:08:14,488 : WARN  : KNIME-Worker-4 :  : Node : CSV Writer : 0:161 : Output file 'D:\opt\datashow\result\theme\enforcepeo\year_edu_isga.csv' exists and will be overwritten
+2019-09-23 10:08:15,773 : WARN  : KNIME-Worker-0 :  : Node : CSV Writer : 0:161 : Output file 'D:\opt\datashow\result\theme\enforcepeo\year_edu_isga.csv' exists and will be overwritten
+2019-09-23 10:08:15,778 : WARN  : KNIME-Worker-3 :  : Node : Row Filter : 0:162 : Node created an empty data table.
+2019-09-23 10:08:15,782 : WARN  : KNIME-Worker-3 :  : Node : CSV Writer : 0:161 : Output file 'D:\opt\datashow\result\theme\enforcepeo\year_edu_isga.csv' exists and will be overwritten
+2019-09-23 10:08:42,554 : WARN  : KNIME-Worker-6 :  : Node : Database Writer (legacy) : 2:63 : Existing table "BUSIN_PERSON_ENFORCE" will be dropped!
+2019-09-23 10:08:47,471 : WARN  : KNIME-Worker-8 :  : Node : Database Writer (legacy) : 2:63 : Existing table "BUSIN_PERSON_ENFORCE" will be dropped!
+2019-09-23 10:08:49,018 : WARN  : KNIME-Worker-6 :  : Node : Database Writer (legacy) : 2:63 : Existing table "BUSIN_PERSON_ENFORCE" will be dropped!
+2019-09-23 10:10:45,005 : WARN  : KNIME-Worker-18 :  : Node : Database Writer (legacy) : 2:63 : Existing table "BUSIN_PERSON_ENFORCE" will be dropped!
+2019-09-23 10:10:56,791 : WARN  : KNIME-Worker-20 :  : Node : CSV Writer : 0:161 : Output file 'D:\opt\datashow\result\theme\enforcepeo\year_edu_isga.csv' exists and will be overwritten
+2019-09-23 10:10:56,816 : WARN  : KNIME-Worker-21 :  : Node : CSV Writer : 0:161 : Output file 'D:\opt\datashow\result\theme\enforcepeo\year_edu_isga.csv' exists and will be overwritten
+2019-09-23 10:10:56,820 : WARN  : KNIME-Worker-22 :  : Node : CSV Writer : 0:161 : Output file 'D:\opt\datashow\result\theme\enforcepeo\year_edu_isga.csv' exists and will be overwritten
+2019-09-23 12:16:07,717 : WARN  : KNIME-Worker-1 :  : TipsAndNewsInjector :  :  : Could not modify intro page: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:192)
+	at sun.security.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1946)
+	at sun.security.ssl.Handshaker.fatalSE(Handshaker.java:316)
+	at sun.security.ssl.Handshaker.fatalSE(Handshaker.java:310)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1639)
+	at sun.security.ssl.ClientHandshaker.processMessage(ClientHandshaker.java:223)
+	at sun.security.ssl.Handshaker.processLoop(Handshaker.java:1037)
+	at sun.security.ssl.Handshaker.process_record(Handshaker.java:965)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1064)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1367)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1395)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1379)
+	at sun.net.www.protocol.https.HttpsClient.afterConnect(HttpsClient.java:559)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:185)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:162)
+	at org.knime.product.rcp.intro.TipsAndNewsInjector.prepareData(TipsAndNewsInjector.java:220)
+	at org.knime.product.rcp.intro.AbstractInjector.run(AbstractInjector.java:145)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:123)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:246)
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:397)
+	at sun.security.validator.PKIXValidator.engineValidate(PKIXValidator.java:302)
+	at sun.security.validator.Validator.validate(Validator.java:262)
+	at sun.security.ssl.X509TrustManagerImpl.validate(X509TrustManagerImpl.java:324)
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(X509TrustManagerImpl.java:229)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:124)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1621)
+	... 16 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.provider.certpath.SunCertPathBuilder.build(SunCertPathBuilder.java:141)
+	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(SunCertPathBuilder.java:126)
+	at java.security.cert.CertPathBuilder.build(CertPathBuilder.java:280)
+	at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:392)
+	... 22 more
+2019-09-23 12:16:12,901 : ERROR : Worker-5 :  : FindLicenseServersJob :  :  : Cannot check for licenses on server 'https://api.hub.knime.com/knime/rest: unable to find valid certification path to requested target
+javax.ws.rs.ProcessingException: javax.net.ssl.SSLHandshakeException: SSLHandshakeException invoking https://api.hub.knime.com/knime/rest/v4/licenses: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at org.apache.cxf.jaxrs.client.AbstractClient.checkClientException(AbstractClient.java:582)
+	at org.apache.cxf.jaxrs.client.AbstractClient.preProcessResult(AbstractClient.java:564)
+	at org.apache.cxf.jaxrs.client.ClientProxyImpl.doChainedInvocation(ClientProxyImpl.java:719)
+	at org.apache.cxf.jaxrs.client.ClientProxyImpl.invoke(ClientProxyImpl.java:228)
+	at com.sun.proxy.$Proxy49.listAvailableLicenses(Unknown Source)
+	at com.knime.enterprise.server.rest.client.licenses.LicenseClient.listAvailableLicenses(LicenseClient.java:96)
+	at com.knime.licenses.internal.server.FindLicenseServersJob.offersLicenses(FindLicenseServersJob.java:123)
+	at com.knime.licenses.internal.server.FindLicenseServersJob.lambda$5(FindLicenseServersJob.java:110)
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:174)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175)
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175)
+	at java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.Nodes$CollectorTask.doLeaf(Nodes.java:2183)
+	at java.util.stream.Nodes$CollectorTask.doLeaf(Nodes.java:2149)
+	at java.util.stream.AbstractTask.compute(AbstractTask.java:316)
+	at java.util.concurrent.CountedCompleter.exec(CountedCompleter.java:731)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
+	at java.util.concurrent.ForkJoinPool.helpComplete(ForkJoinPool.java:1870)
+	at java.util.concurrent.ForkJoinPool.externalHelpComplete(ForkJoinPool.java:2467)
+	at java.util.concurrent.ForkJoinTask.externalAwaitDone(ForkJoinTask.java:324)
+	at java.util.concurrent.ForkJoinTask.doInvoke(ForkJoinTask.java:405)
+	at java.util.concurrent.ForkJoinTask.invoke(ForkJoinTask.java:734)
+	at java.util.stream.Nodes.collect(Nodes.java:328)
+	at java.util.stream.ReferencePipeline.evaluateToNode(ReferencePipeline.java:109)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:540)
+	at java.util.stream.AbstractPipeline.evaluateToArrayNode(AbstractPipeline.java:260)
+	at java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:438)
+	at com.knime.licenses.internal.server.FindLicenseServersJob.findLicenseServers(FindLicenseServersJob.java:111)
+	at com.knime.licenses.internal.server.BackgroundFetchLicensesJob.findFirstLicenseServer(BackgroundFetchLicensesJob.java:148)
+	at com.knime.licenses.internal.server.BackgroundFetchLicensesJob.internalRun(BackgroundFetchLicensesJob.java:109)
+	at com.knime.licenses.internal.server.BackgroundFetchLicensesJob.run(BackgroundFetchLicensesJob.java:69)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: javax.net.ssl.SSLHandshakeException: SSLHandshakeException invoking https://api.hub.knime.com/knime/rest/v4/licenses: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.mapException(HTTPConduit.java:1376)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.close(HTTPConduit.java:1360)
+	at org.apache.cxf.transport.AbstractConduit.close(AbstractConduit.java:56)
+	at org.apache.cxf.transport.http.HTTPConduit.close(HTTPConduit.java:651)
+	at org.apache.cxf.interceptor.MessageSenderInterceptor$MessageSenderEndingInterceptor.handleMessage(MessageSenderInterceptor.java:62)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:307)
+	at org.apache.cxf.jaxrs.client.AbstractClient.doRunInterceptorChain(AbstractClient.java:649)
+	at org.apache.cxf.jaxrs.client.ClientProxyImpl.doChainedInvocation(ClientProxyImpl.java:717)
+	... 32 more
+Caused by: javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1944)
+	at sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1939)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.net.www.protocol.http.HttpURLConnection.getChainedException(HttpURLConnection.java:1938)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1508)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:347)
+	at org.apache.cxf.transport.http.URLConnectionHTTPConduit$URLConnectionWrappedOutputStream.getResponseCode(URLConnectionHTTPConduit.java:332)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.processRetransmit(HTTPConduit.java:1424)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.handleRetransmits(HTTPConduit.java:1411)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.handleResponse(HTTPConduit.java:1545)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.close(HTTPConduit.java:1347)
+	... 38 more
+Caused by: javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:192)
+	at sun.security.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1946)
+	at sun.security.ssl.Handshaker.fatalSE(Handshaker.java:316)
+	at sun.security.ssl.Handshaker.fatalSE(Handshaker.java:310)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1639)
+	at sun.security.ssl.ClientHandshaker.processMessage(ClientHandshaker.java:223)
+	at sun.security.ssl.Handshaker.processLoop(Handshaker.java:1037)
+	at sun.security.ssl.Handshaker.process_record(Handshaker.java:965)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1064)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1367)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1395)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1379)
+	at sun.net.www.protocol.https.HttpsClient.afterConnect(HttpsClient.java:559)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:185)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1564)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)
+	at sun.net.www.protocol.http.HttpURLConnection.getHeaderFields(HttpURLConnection.java:3074)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getHeaderFields(HttpsURLConnectionImpl.java:292)
+	at org.apache.cxf.transport.http.Headers.readFromConnection(Headers.java:258)
+	at org.apache.cxf.transport.http.URLConnectionHTTPConduit$URLConnectionWrappedOutputStream.updateCookiesBeforeRetransmit(URLConnectionHTTPConduit.java:297)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.handleRetransmits(HTTPConduit.java:1409)
+	... 40 more
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:397)
+	at sun.security.validator.PKIXValidator.engineValidate(PKIXValidator.java:302)
+	at sun.security.validator.Validator.validate(Validator.java:262)
+	at sun.security.ssl.X509TrustManagerImpl.validate(X509TrustManagerImpl.java:324)
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(X509TrustManagerImpl.java:229)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:124)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1621)
+	... 56 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.provider.certpath.SunCertPathBuilder.build(SunCertPathBuilder.java:141)
+	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(SunCertPathBuilder.java:126)
+	at java.security.cert.CertPathBuilder.build(CertPathBuilder.java:280)
+	at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:392)
+	... 62 more
+2019-09-23 12:19:15,878 : WARN  : KNIME-Worker-4 :  : Node : CSV Writer : 2:239 : Output file 'D:\opt\datashow\result\theme\punish\year_hangye_isga.csv' exists and will be overwritten
+2019-09-23 12:19:15,881 : WARN  : KNIME-Worker-4 :  : Node : CSV Writer : 2:141 : Output file 'D:\opt\datashow\result\theme\punish\year_type_isga.csv' exists and will be overwritten
+2019-09-23 12:19:15,883 : WARN  : KNIME-Worker-4 :  : Node : Database Writer (legacy) : 2:233 : Existing table "THEME_YEAR_MONTH_ISGA" will be dropped!
+2019-09-23 12:19:15,885 : WARN  : KNIME-Worker-4 :  : Node : CSV Writer : 2:90 : Output file 'D:\opt\datashow\result\theme\punish\year_type_nonega.csv' exists and will be overwritten
+2019-09-23 12:19:15,888 : WARN  : KNIME-Worker-4 :  : Node : Database Writer (legacy) : 2:231 : Existing table "THEME_YEAR_MONTH_NONEGA" will be dropped!
+2019-09-23 12:19:15,890 : WARN  : KNIME-Worker-4 :  : Node : CSV Writer : 2:244 : Output file 'D:\opt\datashow\result\theme\punish\year_hangye_nonega.csv' exists and will be overwritten
+2019-09-23 12:19:15,892 : WARN  : KNIME-Worker-4 :  : Node : CSV Writer : 2:246 : Output file 'D:\opt\datashow\result\theme\punish\year_quyu_nonega.csv' exists and will be overwritten
+2019-09-23 12:19:15,895 : WARN  : KNIME-Worker-4 :  : Node : CSV Writer : 2:130 : Output file 'D:\opt\datashow\result\theme\punish\year_hangye_type_isga.csv' exists and will be overwritten
+2019-09-23 12:19:15,897 : WARN  : KNIME-Worker-4 :  : Node : CSV Writer : 2:134 : Output file 'D:\opt\datashow\result\theme\punish\year_quyu_type_isga.csv' exists and will be overwritten
+2019-09-23 12:19:15,900 : WARN  : KNIME-Worker-4 :  : Node : CSV Writer : 2:122 : Output file 'D:\opt\datashow\result\theme\punish\year_quyu_type_nonega.csv' exists and will be overwritten
+2019-09-23 12:19:15,902 : WARN  : KNIME-Worker-4 :  : Node : CSV Writer : 2:146 : Output file 'D:\opt\datashow\result\theme\punish\year_isga.csv' exists and will be overwritten
+2019-09-23 12:19:15,904 : WARN  : KNIME-Worker-4 :  : Node : CSV Writer : 2:138 : Output file 'D:\opt\datashow\result\theme\punish\year_hangye_quyu_type_isga.csv' exists and will be overwritten
+2019-09-23 12:19:15,907 : WARN  : KNIME-Worker-4 :  : Node : CSV Writer : 2:143 : Output file 'D:\opt\datashow\result\theme\punish\year_nonega.csv' exists and will be overwritten
+2019-09-23 12:19:15,909 : WARN  : KNIME-Worker-4 :  : Node : CSV Writer : 2:149 : Output file 'D:\opt\datashow\result\theme\punish\year_quyu_isga.csv' exists and will be overwritten
+2019-09-23 12:19:18,970 : WARN  : KNIME-Worker-5 :  : Node : CSV Writer : 2:239 : Output file 'D:\opt\datashow\result\theme\punish\year_hangye_isga.csv' exists and will be overwritten
+2019-09-23 12:19:18,975 : WARN  : KNIME-Worker-5 :  : Node : CSV Writer : 2:141 : Output file 'D:\opt\datashow\result\theme\punish\year_type_isga.csv' exists and will be overwritten
+2019-09-23 12:19:18,977 : WARN  : KNIME-Worker-5 :  : Node : Database Writer (legacy) : 2:233 : Existing table "THEME_YEAR_MONTH_ISGA" will be dropped!
+2019-09-23 12:19:18,979 : WARN  : KNIME-Worker-5 :  : Node : CSV Writer : 2:90 : Output file 'D:\opt\datashow\result\theme\punish\year_type_nonega.csv' exists and will be overwritten
+2019-09-23 12:19:18,981 : WARN  : KNIME-Worker-5 :  : Node : Database Writer (legacy) : 2:231 : Existing table "THEME_YEAR_MONTH_NONEGA" will be dropped!
+2019-09-23 12:19:18,984 : WARN  : KNIME-Worker-5 :  : Node : CSV Writer : 2:244 : Output file 'D:\opt\datashow\result\theme\punish\year_hangye_nonega.csv' exists and will be overwritten
+2019-09-23 12:19:18,987 : WARN  : KNIME-Worker-5 :  : Node : CSV Writer : 2:246 : Output file 'D:\opt\datashow\result\theme\punish\year_quyu_nonega.csv' exists and will be overwritten
+2019-09-23 12:19:18,989 : WARN  : KNIME-Worker-5 :  : Node : CSV Writer : 2:130 : Output file 'D:\opt\datashow\result\theme\punish\year_hangye_type_isga.csv' exists and will be overwritten
+2019-09-23 12:19:18,993 : WARN  : KNIME-Worker-5 :  : Node : CSV Writer : 2:134 : Output file 'D:\opt\datashow\result\theme\punish\year_quyu_type_isga.csv' exists and will be overwritten
+2019-09-23 12:19:18,996 : WARN  : KNIME-Worker-5 :  : Node : CSV Writer : 2:122 : Output file 'D:\opt\datashow\result\theme\punish\year_quyu_type_nonega.csv' exists and will be overwritten
+2019-09-23 12:19:18,999 : WARN  : KNIME-Worker-5 :  : Node : CSV Writer : 2:146 : Output file 'D:\opt\datashow\result\theme\punish\year_isga.csv' exists and will be overwritten
+2019-09-23 12:19:19,002 : WARN  : KNIME-Worker-5 :  : Node : CSV Writer : 2:138 : Output file 'D:\opt\datashow\result\theme\punish\year_hangye_quyu_type_isga.csv' exists and will be overwritten
+2019-09-23 12:19:19,005 : WARN  : KNIME-Worker-5 :  : Node : CSV Writer : 2:143 : Output file 'D:\opt\datashow\result\theme\punish\year_nonega.csv' exists and will be overwritten
+2019-09-23 12:19:19,008 : WARN  : KNIME-Worker-5 :  : Node : CSV Writer : 2:149 : Output file 'D:\opt\datashow\result\theme\punish\year_quyu_isga.csv' exists and will be overwritten
+2019-09-23 12:19:19,620 : WARN  : KNIME-Worker-3 :  : Node : CSV Writer : 2:141 : Output file 'D:\opt\datashow\result\theme\punish\year_type_isga.csv' exists and will be overwritten
+2019-09-23 12:24:10,035 : WARN  : KNIME-Worker-10 :  : Node : Database Writer (legacy) : 3:206 : Existing table "BUSIN_CASE_PUNISH_NARROW" will be dropped!
+2019-09-23 12:24:48,756 : WARN  : KNIME-Worker-11 :  : Node : Database Writer (legacy) : 3:206 : Existing table "BUSIN_CASE_PUNISH_NARROW" will be dropped!
+2019-09-23 18:45:32,869 : WARN  : main :  : Node : Database Writer (legacy) : 3:206 : Existing table "BUSIN_CASE_PUNISH_NARROW" will be dropped!
+2019-09-23 18:45:32,871 : WARN  : main :  : Node : Database Writer (legacy) : 3:206 : Existing table "BUSIN_CASE_PUNISH_NARROW" will be dropped!
+2019-09-23 18:45:32,875 : WARN  : main :  : Node : Database Writer (legacy) : 3:206 : Existing table "BUSIN_CASE_PUNISH_NARROW" will be dropped!
+2019-09-23 18:45:32,891 : WARN  : main :  : Node : Database Writer (legacy) : 3:206 : Existing table "BUSIN_CASE_PUNISH_NARROW" will be dropped!
+2019-09-23 18:45:32,893 : WARN  : main :  : Node : Database Writer (legacy) : 3:206 : Existing table "BUSIN_CASE_PUNISH_NARROW" will be dropped!
+2019-09-23 18:45:32,899 : WARN  : main :  : Node : Database Writer (legacy) : 3:206 : Existing table "BUSIN_CASE_PUNISH_NARROW" will be dropped!
+2019-09-23 18:45:32,900 : WARN  : main :  : Node : Database Writer (legacy) : 3:206 : Existing table "BUSIN_CASE_PUNISH_NARROW" will be dropped!
+2019-09-23 18:45:32,904 : WARN  : main :  : Node : Database Writer (legacy) : 3:206 : Existing table "BUSIN_CASE_PUNISH_NARROW" will be dropped!
+2019-09-23 18:45:32,906 : WARN  : main :  : Node : Database Writer (legacy) : 3:206 : Existing table "BUSIN_CASE_PUNISH_NARROW" will be dropped!
+2019-09-23 18:45:32,908 : WARN  : main :  : Node : Database Writer (legacy) : 3:206 : Existing table "BUSIN_CASE_PUNISH_NARROW" will be dropped!
+2019-09-23 18:45:32,910 : WARN  : main :  : Node : Database Writer (legacy) : 3:206 : Existing table "BUSIN_CASE_PUNISH_NARROW" will be dropped!
+2019-09-23 18:45:32,912 : WARN  : main :  : Node : Database Writer (legacy) : 3:206 : Existing table "BUSIN_CASE_PUNISH_NARROW" will be dropped!
+2019-09-23 18:45:32,916 : WARN  : main :  : Node : Database Writer (legacy) : 3:206 : Existing table "BUSIN_CASE_PUNISH_NARROW" will be dropped!
+2019-09-23 18:45:32,918 : WARN  : main :  : Node : Database Writer (legacy) : 3:206 : Existing table "BUSIN_CASE_PUNISH_NARROW" will be dropped!
+2019-09-23 18:45:32,920 : WARN  : main :  : Node : Database Writer (legacy) : 3:206 : Existing table "BUSIN_CASE_PUNISH_NARROW" will be dropped!
+2019-09-25 14:17:15,613 : WARN  : KNIME-Worker-1 :  : TipsAndNewsInjector :  :  : Could not modify intro page: Read timed out
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.InputRecord.readFully(InputRecord.java:465)
+	at sun.security.ssl.InputRecord.read(InputRecord.java:503)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:975)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1367)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1395)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1379)
+	at sun.net.www.protocol.https.HttpsClient.afterConnect(HttpsClient.java:559)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:185)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:162)
+	at org.knime.product.rcp.intro.TipsAndNewsInjector.prepareData(TipsAndNewsInjector.java:220)
+	at org.knime.product.rcp.intro.AbstractInjector.run(AbstractInjector.java:145)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:123)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:246)
+2019-09-25 14:17:31,163 : ERROR : ForkJoinPool.commonPool-worker-1 :  : FindLicenseServersJob :  :  : Cannot check for licenses on server 'https://api.hub.knime.com/knime/rest: unable to find valid certification path to requested target
+javax.ws.rs.ProcessingException: javax.net.ssl.SSLHandshakeException: SSLHandshakeException invoking https://api.hub.knime.com/knime/rest/v4/licenses: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at org.apache.cxf.jaxrs.client.AbstractClient.checkClientException(AbstractClient.java:582)
+	at org.apache.cxf.jaxrs.client.AbstractClient.preProcessResult(AbstractClient.java:564)
+	at org.apache.cxf.jaxrs.client.ClientProxyImpl.doChainedInvocation(ClientProxyImpl.java:719)
+	at org.apache.cxf.jaxrs.client.ClientProxyImpl.invoke(ClientProxyImpl.java:228)
+	at com.sun.proxy.$Proxy49.listAvailableLicenses(Unknown Source)
+	at com.knime.enterprise.server.rest.client.licenses.LicenseClient.listAvailableLicenses(LicenseClient.java:96)
+	at com.knime.licenses.internal.server.FindLicenseServersJob.offersLicenses(FindLicenseServersJob.java:123)
+	at com.knime.licenses.internal.server.FindLicenseServersJob.lambda$5(FindLicenseServersJob.java:110)
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:174)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175)
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175)
+	at java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.Nodes$CollectorTask.doLeaf(Nodes.java:2183)
+	at java.util.stream.Nodes$CollectorTask.doLeaf(Nodes.java:2149)
+	at java.util.stream.AbstractTask.compute(AbstractTask.java:316)
+	at java.util.concurrent.CountedCompleter.exec(CountedCompleter.java:731)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
+Caused by: javax.net.ssl.SSLHandshakeException: SSLHandshakeException invoking https://api.hub.knime.com/knime/rest/v4/licenses: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.mapException(HTTPConduit.java:1376)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.close(HTTPConduit.java:1360)
+	at org.apache.cxf.transport.AbstractConduit.close(AbstractConduit.java:56)
+	at org.apache.cxf.transport.http.HTTPConduit.close(HTTPConduit.java:651)
+	at org.apache.cxf.interceptor.MessageSenderInterceptor$MessageSenderEndingInterceptor.handleMessage(MessageSenderInterceptor.java:62)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:307)
+	at org.apache.cxf.jaxrs.client.AbstractClient.doRunInterceptorChain(AbstractClient.java:649)
+	at org.apache.cxf.jaxrs.client.ClientProxyImpl.doChainedInvocation(ClientProxyImpl.java:717)
+	... 20 more
+Caused by: javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1944)
+	at sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1939)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.net.www.protocol.http.HttpURLConnection.getChainedException(HttpURLConnection.java:1938)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1508)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:347)
+	at org.apache.cxf.transport.http.URLConnectionHTTPConduit$URLConnectionWrappedOutputStream.getResponseCode(URLConnectionHTTPConduit.java:332)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.processRetransmit(HTTPConduit.java:1424)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.handleRetransmits(HTTPConduit.java:1411)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.handleResponse(HTTPConduit.java:1545)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.close(HTTPConduit.java:1347)
+	... 26 more
+Caused by: javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:192)
+	at sun.security.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1946)
+	at sun.security.ssl.Handshaker.fatalSE(Handshaker.java:316)
+	at sun.security.ssl.Handshaker.fatalSE(Handshaker.java:310)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1639)
+	at sun.security.ssl.ClientHandshaker.processMessage(ClientHandshaker.java:223)
+	at sun.security.ssl.Handshaker.processLoop(Handshaker.java:1037)
+	at sun.security.ssl.Handshaker.process_record(Handshaker.java:965)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1064)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1367)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1395)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1379)
+	at sun.net.www.protocol.https.HttpsClient.afterConnect(HttpsClient.java:559)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:185)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1564)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)
+	at sun.net.www.protocol.http.HttpURLConnection.getHeaderFields(HttpURLConnection.java:3074)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getHeaderFields(HttpsURLConnectionImpl.java:292)
+	at org.apache.cxf.transport.http.Headers.readFromConnection(Headers.java:258)
+	at org.apache.cxf.transport.http.URLConnectionHTTPConduit$URLConnectionWrappedOutputStream.updateCookiesBeforeRetransmit(URLConnectionHTTPConduit.java:297)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.handleRetransmits(HTTPConduit.java:1409)
+	... 28 more
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:397)
+	at sun.security.validator.PKIXValidator.engineValidate(PKIXValidator.java:302)
+	at sun.security.validator.Validator.validate(Validator.java:262)
+	at sun.security.ssl.X509TrustManagerImpl.validate(X509TrustManagerImpl.java:324)
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(X509TrustManagerImpl.java:229)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:124)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1621)
+	... 44 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.provider.certpath.SunCertPathBuilder.build(SunCertPathBuilder.java:141)
+	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(SunCertPathBuilder.java:126)
+	at java.security.cert.CertPathBuilder.build(CertPathBuilder.java:280)
+	at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:392)
+	... 50 more
+2019-09-25 14:52:13,104 : WARN  : KNIME-Worker-2 :  : Node : CSV Writer : 4:120 : Output file 'D:\opt\datashow\result\theme\law\year_new_type_isga.csv' exists and will be overwritten
+2019-09-25 14:52:13,500 : WARN  : KNIME-Worker-3 :  : Node : CSV Writer : 4:120 : Output file 'D:\opt\datashow\result\theme\law\year_new_type_isga.csv' exists and will be overwritten

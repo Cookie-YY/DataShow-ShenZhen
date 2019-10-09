@@ -17,12 +17,17 @@ command_power = "power_year%_isga = ju.get_category(pd.read_csv(os.path.join(ju.
 for asp in aspect_power:
     exec(command_power.replace("%", asp))
 punish_year_power_isga = ju.get_category(pd.read_csv(os.path.join(ju.path_source_punish, 'year_power_isga.csv')))
+punish_year_hangye_power_isga = ju.get_category(pd.read_csv(os.path.join(ju.path_source_punish, 'year_hangye_power_isga.csv')))
+punish_year_quyu_power_isga = ju.get_category(pd.read_csv(os.path.join(ju.path_source_punish, 'year_quyu_power_isga.csv')))
+punish_year_hangye_quyu_power_isga = ju.get_category(pd.read_csv(os.path.join(ju.path_source_punish, 'year_hangye_quyu_power_isga.csv')))
 
 #####################################################################################
 # 初始化：类别总数/左侧总数（总，法，依）/各区划各类别，各行业各类别
 powerGenre, leftPowerTotal = [], [],
 cityPower, tradePower = [], []
 tradePowerErji, cityPowerErji = [], []
+tradeDormancy, cityDormancy = [], []
+tradeDormancyErji, cityDormancyErji = [], []
 powerSource = []
 leftPunishRateOfPower = []
 
@@ -64,6 +69,50 @@ for group_name, group_data in power_year_hangye_quyu_type_isga.groupby('YEAR'):
                 hangyequyu_data[ju.powertype_mapping[group_name___]] = ju.get_value(group_data___, 'SUM(*)', jduge_sum=True)
             hangyequyu.append(hangyequyu_data)
         cityPowerErji.append({"year": int(group_name), "dep": group_name_, "data": hangyequyu})
+# 全行业休眠职权（含二级，分类只有处罚）tradeDormancy方法
+for group_name, group_data in punish_year_hangye_power_isga.groupby('YEAR'):
+    sleep_this = []
+    for group_name_, group_data_ in group_data.groupby("PUNISH_HANGYE"):
+        sleep_this_data = {"name": group_name_, 
+                           "total": ju.get_value(group_data_, "ALL"), 
+                           "punish": ju.get_value(group_data_, "SLEEP"), 
+                           "allowance": 1, "force": 1, "check":1, "else": 1}
+        sleep_this.append(sleep_this_data)
+    tradeDormancy.append({"year": int(group_name), "data": sleep_this})
+# 全行业休眠职权（二级）
+for group_name, group_data in punish_year_hangye_quyu_power_isga.groupby('YEAR'):
+    for group_name_, group_data_ in group_data.groupby("PUNISH_HANGYE"):
+        sleep_this = []
+        for group_name__, group_data__ in group_data_.groupby("PUNISH_QUYU"):
+            sleep_this_data = {"name": group_name__, 
+                               "total": ju.get_value(group_data__, "ALL"), 
+                               "punish": ju.get_value(group_data__, "SLEEP"), 
+                               "allowance": 1, "force": 1, "check":1, "else": 1}
+            sleep_this.append(sleep_this_data)
+        tradeDormancyErji.append({"year": int(group_name), "dep": group_name_, "data": sleep_this})
+
+# 全市区休眠职权（含二级，分类只有处罚）cityDormancy方法
+for group_name, group_data in punish_year_quyu_power_isga.groupby('YEAR'):
+    sleep_this = []
+    for group_name_, group_data_ in group_data.groupby("PUNISH_QUYU"):
+        sleep_this_data = {"name": group_name_, 
+                           "total": ju.get_value(group_data_, "ALL"), 
+                           "punish": ju.get_value(group_data_, "SLEEP"), 
+                           "allowance": 1, "force": 1, "check":1, "else": 1}
+        sleep_this.append(sleep_this_data)
+    cityDormancy.append({"year": int(group_name), "data": sleep_this})
+# 全市区休眠职权（二级）
+for group_name, group_data in punish_year_hangye_quyu_power_isga.groupby('YEAR'):
+    for group_name_, group_data_ in group_data.groupby("PUNISH_QUYU"):
+        sleep_this = []
+        for group_name__, group_data__ in group_data_.groupby("PUNISH_HANGYE"):
+            sleep_this_data = {"name": group_name__, 
+                               "total": ju.get_value(group_data__, "ALL"), 
+                               "punish": ju.get_value(group_data__, "SLEEP"), 
+                               "allowance": 1, "force": 1, "check":1, "else": 1}
+            sleep_this.append(sleep_this_data)
+        cityDormancyErji.append({"year": int(group_name), "dep": group_name_, "data": sleep_this})
+
 # 职权类型分析powerGenre方法
 for group_name, group_data in power_year_type_isga.groupby('YEAR'):
     type_all_one = []
@@ -100,6 +149,10 @@ if __name__ == '__main__':
         "tradePowerErji": tradePowerErji,
         "cityPower": cityPower,
         "cityPowerErji": cityPowerErji,
+        "tradeDormancy": tradeDormancy,  # 休眠只算了一年
+        "tradeDormancyErji": tradeDormancyErji,  # 休眠只算了一年
+        "cityDormancy": cityDormancy,  # 休眠只算了一年
+        "cityDormancyErji": cityDormancyErji,  # 休眠只算了一年
         "powerGenre": powerGenre,
         "powerSource": powerSource,
         # 左侧

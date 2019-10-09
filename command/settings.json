@@ -1,7 +1,7 @@
 {
   "SIGNIFICANT_DIGITS": 2,
   "FILE_ENCODING": "UTF-8",
-  "STATE": "PRO",
+  "STATE": "DEV",
 
   "PATH": {
     "PATH_DEV": {
@@ -12,11 +12,10 @@
       "PATH_OJDBC": "D:\\Software\\ojdbc8.jar"},
     "PATH_PRO": {
       "PATH_DAPING_DATA": "/opt/szfzb/szdp/static/data/supervision/",
-      "PATH_PYTHON": "/root/anaconda/bin/python3",
+      "PATH_PYTHON": "/root/anaconda3/bin/python3",
       "PATH_CORE": "/opt/core/knime_4.0.0/knime",
       "PATH_EPF": "/opt/core/knime.epf",
       "PATH_OJDBC": "/opt/core/ojdbc8.jar"}
-
     },
 
   "DATABASE": {
@@ -34,7 +33,7 @@
     },
     "DATABASE_PRO": {
       "RAW_DATABASE": {
-        "IP":"10.253.131.4:1521:ORCLUTF8",
+        "IP":"10.253.131.7:1521/ORCLPDB",
         "USER": "AP_PRO_SHZHPT",
         "PASSWORD_ENCRYPTED": "01BE7FAD048DD1002EFF604B0F821B2606"
       },

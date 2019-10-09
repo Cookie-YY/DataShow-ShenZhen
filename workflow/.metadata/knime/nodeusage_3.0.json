@@ -1,0 +1,151 @@
+
+{
+    "version":"4.0.0.v201906260931",
+    "created":"2019-09-23 10:06",
+    "nodestats":{
+        "nodes":[
+            {
+                "id":"org.knime.base.node.io.database.DBReaderConnectionNodeFactory#Database Table Connector (legacy)",
+                "nrexecs":16,
+                "nrfails":1,
+                "exectime":18391,
+                "nrcreated":0,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.io.database.DBConnectionNodeFactory#Database Connection Table Reader (legacy)",
+                "nrexecs":16,
+                "nrfails":0,
+                "exectime":27311,
+                "nrcreated":0,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.preproc.filter.row.RowFilterNodeFactory#Row Filter",
+                "nrexecs":13,
+                "nrfails":0,
+                "exectime":93,
+                "nrcreated":0,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.io.csvreader.CSVReaderNodeFactory#CSV Reader",
+                "nrexecs":10,
+                "nrfails":0,
+                "exectime":13024,
+                "nrcreated":0,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.preproc.filter.column.DataColumnSpecFilterNodeFactory#Column Filter",
+                "nrexecs":15,
+                "nrfails":0,
+                "exectime":1049,
+                "nrcreated":0,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.preproc.stringmanipulation.StringManipulationNodeFactory#String Manipulation",
+                "nrexecs":10,
+                "nrfails":0,
+                "exectime":663,
+                "nrcreated":0,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.preproc.joiner.Joiner2NodeFactory#Joiner",
+                "nrexecs":19,
+                "nrfails":0,
+                "exectime":4133,
+                "nrcreated":0,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.rules.engine.RuleEngineFilterNodeFactory#Rule-based Row Filter",
+                "nrexecs":3,
+                "nrfails":0,
+                "exectime":1417,
+                "nrcreated":0,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.ext.jep.JEPNodeFactory#Math Formula",
+                "nrexecs":6,
+                "nrfails":0,
+                "exectime":1156,
+                "nrcreated":0,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.preproc.rename.RenameNodeFactory#Column Rename",
+                "nrexecs":3,
+                "nrfails":0,
+                "exectime":3,
+                "nrcreated":0,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.timeseries.node.extract.date.DateFieldExtractorNodeFactory#Date Field Extractor (legacy)",
+                "nrexecs":6,
+                "nrfails":0,
+                "exectime":1015,
+                "nrcreated":0,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.timeseries.node.dateshift.DateShiftNodeFactory#Date/Time Shift (legacy)",
+                "nrexecs":1,
+                "nrfails":0,
+                "exectime":100,
+                "nrcreated":0,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.preproc.colcombine2.ColCombine2NodeFactory#Column Combiner",
+                "nrexecs":1,
+                "nrfails":0,
+                "exectime":47,
+                "nrcreated":0,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.io.database.connection.JDBCConnectorNodeFactory#Database Connector (legacy)",
+                "nrexecs":1,
+                "nrfails":0,
+                "exectime":6,
+                "nrcreated":0,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.io.database.DBWriterNodeFactory#Database Writer (legacy)",
+                "nrexecs":1,
+                "nrfails":0,
+                "exectime":4006,
+                "nrcreated":0,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.preproc.groupby.GroupByNodeFactory#GroupBy",
+                "nrexecs":1,
+                "nrfails":0,
+                "exectime":609,
+                "nrcreated":0,
+                "successor":"n/a"
+            }
+        ],
+        "metaNodes":{
+        },
+        "wrappedNodes":{
+        }
+    },
+    "uptime":8993822,
+    "workflowsOpened":8,
+    "remoteWorkflowsOpened":0,
+    "workflowsImported":0,
+    "workflowsExported":0,
+    "launches":3,
+    "lastApplicationID":"org.knime.product.KNIME_APPLICATION",
+    "timeSinceLastStart":2123858,
+    "crashes":0,
+    "properlyShutDown":true
+}

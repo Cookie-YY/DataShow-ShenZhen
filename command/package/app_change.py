@@ -9,6 +9,7 @@ import os
 from .base import SettingsInfo
 import xml.dom.minidom
 import re
+import datetime
 
 """
 本程序是将获得的设置信息修改程序，包含
@@ -53,6 +54,7 @@ class BaseAppChange(SettingsInfo):
         log_path = os.path.join(self.path_base, 'command', 'excute_log')
         os.system('mkdir -p %s' % log_path)
         with open(os.path.join(log_path, 'wrong'), 'a') as f:
+            f.write('执行时间:' + str(datetime.datetime.now()) + '\n')
             for xml_path in path_list:
                 dom = xml.dom.minidom.parse(xml_path)
                 entry = dom.documentElement.getElementsByTagName('entry')

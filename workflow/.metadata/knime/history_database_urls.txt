@@ -1,0 +1,2 @@
+jdbc:oracle:thin:@127.0.0.1:1521:ORCL
+jdbc:oracle:thin:@<host>:<port>/<database_name>
