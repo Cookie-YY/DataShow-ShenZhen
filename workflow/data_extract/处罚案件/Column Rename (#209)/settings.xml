@@ -17,6 +17,11 @@
 <entry key="new_column_name" type="xstring" value="PUNISH_QUYU"/>
 <entry key="new_column_type" type="xint" value="0"/>
 </config>
+<config key="2">
+<entry key="old_column_name" type="xstring" value="SOURCE_MAPPING"/>
+<entry key="new_column_name" type="xstring" value="PUNISH_SOURCE"/>
+<entry key="new_column_type" type="xint" value="0"/>
+</config>
 </config>
 </config>
 <config key="nodeAnnotation">

@@ -1,4 +1,4 @@
-datashow-v1.0:
+﻿datashow-v1.0:
 	本机已调通，差开发环境到一个用环境的测试
 	测试出问题：原因：xml.etree.ElementTree 模块会将修改后的xml增加ns0，knime不识别
 	=> 已解决
@@ -13,4 +13,4 @@ datashow-v1.3
     1.2调试通过，更改了python的路径（anaconda->anaconda3）
     更改了数据库读取路径（10.253.131.7:1521/ORCLPDB）
     在日志文件中开始时增加换行符
-    增加了计算指标
+    增加了计算指标——执行类型待确认/吻合度待确认/预警监督还没做

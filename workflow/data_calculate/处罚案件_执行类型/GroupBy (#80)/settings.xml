@@ -13,7 +13,7 @@
 <config key="grouByColumns">
 <config key="InclList">
 <entry key="array-size" type="xint" value="2"/>
-<entry key="0" type="xstring" value="ENFORCE_TYPE"/>
+<entry key="0" type="xstring" value="PUNISH_ENFORCETYPE"/>
 <entry key="1" type="xstring" value="YEAR"/>
 </config>
 <config key="ExclList">

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg stroke-dasharray="none" shape-rendering="auto"
      xmlns="http://www.w3.org/2000/svg" font-family="&apos;Dialog&apos;"
-     width="866" text-rendering="auto" fill-opacity="1"
+     width="907" text-rendering="auto" fill-opacity="1"
      contentScriptType="text/ecmascript" color-interpolation="auto"
      color-rendering="auto" preserveAspectRatio="xMidYMid meet" font-size="12"
      fill="black" xmlns:xlink="http://www.w3.org/1999/xlink" stroke="black"
@@ -15,10 +15,10 @@
     <g>
         <defs id="defs1">
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath1">
-                <path d="M690 358 L860 358 L860 405 L690 405 L690 358 Z"/>
+                <path d="M660 358 L890 358 L890 405 L660 405 L660 358 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath2">
-                <path d="M454 358 L576 358 L576 390 L454 390 L454 358 Z"/>
+                <path d="M424 358 L606 358 L606 390 L424 390 L424 358 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath3">
                 <path d="M610 358 L667 358 L667 375 L610 375 L610 358 Z"/>
@@ -27,19 +27,19 @@
                 <path d="M610 78 L667 78 L667 95 L610 95 L610 78 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath5">
-                <path d="M708 78 L842 78 L842 125 L708 125 L708 78 Z"/>
+                <path d="M678 78 L872 78 L872 125 L678 125 L678 78 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath6">
-                <path d="M472 78 L569 78 L569 110 L472 110 L472 78 Z"/>
+                <path d="M442 78 L588 78 L588 110 L442 110 L442 78 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath7">
                 <path d="M396 178 L439 178 L439 210 L396 210 L396 178 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath8">
-                <path d="M690 218 L860 218 L860 265 L690 265 L690 218 Z"/>
+                <path d="M660 218 L890 218 L890 265 L660 265 L660 218 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath9">
-                <path d="M454 218 L576 218 L576 250 L454 250 L454 218 Z"/>
+                <path d="M424 218 L606 218 L606 250 L424 250 L424 218 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath10">
                 <path d="M610 218 L667 218 L667 235 L610 235 L610 218 Z"/>
@@ -48,25 +48,25 @@
                 <path d="M610 518 L667 518 L667 535 L610 535 L610 518 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath12">
-                <path d="M690 518 L860 518 L860 565 L690 565 L690 518 Z"/>
+                <path d="M660 518 L890 518 L890 565 L660 565 L660 518 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath13">
-                <path d="M454 518 L576 518 L576 550 L454 550 L454 518 Z"/>
+                <path d="M424 518 L606 518 L606 550 L424 550 L424 518 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath14">
                 <path d="M610 678 L667 678 L667 695 L610 695 L610 678 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath15">
-                <path d="M436 678 L594 678 L594 710 L436 710 L436 678 Z"/>
+                <path d="M406 678 L624 678 L624 710 L406 710 L406 678 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath16">
-                <path d="M683 678 L867 678 L867 725 L683 725 L683 678 Z"/>
+                <path d="M642 678 L908 678 L908 725 L642 725 L642 678 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath17">
-                <path d="M708 818 L842 818 L842 865 L708 865 L708 818 Z"/>
+                <path d="M678 818 L872 818 L872 865 L678 865 L678 818 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath18">
-                <path d="M472 818 L569 818 L569 850 L472 850 L472 818 Z"/>
+                <path d="M442 818 L588 818 L588 850 L442 850 L442 818 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath19">
                 <path d="M610 818 L667 818 L667 835 L610 835 L610 818 Z"/>
@@ -261,49 +261,49 @@
                 <path d="M223 454 L283 454 L283 465 L223 465 L223 454 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath83">
-                <path d="M-1 -1 L1253 -1 L1253 1087 L-1 1087 L-1 -1 Z"/>
+                <path d="M-1 -1 L1616 -1 L1616 1100 L-1 1100 L-1 -1 Z"/>
             </clipPath>
         </defs>
         <g stroke-miterlimit="0" stroke-width="0"
            font-family="&apos;Arial&apos;" stroke-linejoin="round">
             <text xml:space="preserve" x="745" y="370"
                   clip-path="url(#clipPath1)" stroke="none">写出主题库</text><text xml:space="preserve"
-                  x="691" y="385" clip-path="url(#clipPath1)" stroke="none">各年各行业处罚金额（含公安）</text><text xml:space="preserve"
-                  x="700" y="400" clip-path="url(#clipPath1)" stroke="none">year_hangye_fine_isga.csv</text><text xml:space="preserve"
+                  x="661" y="385" clip-path="url(#clipPath1)" stroke="none">各年各行业各案件种类处罚金额（含公安）</text><text xml:space="preserve"
+                  x="686" y="400" clip-path="url(#clipPath1)" stroke="none">year_hangye_type_fine_isga.csv</text><text xml:space="preserve"
                   x="503" y="370" clip-path="url(#clipPath2)" stroke="none">计算</text><text xml:space="preserve"
-                  x="455" y="385" clip-path="url(#clipPath2)" stroke="none">各年各行业的罚款金额</text><text xml:space="preserve"
+                  x="425" y="385" clip-path="url(#clipPath2)" stroke="none">各年各行业各案件种类的罚款金额</text><text xml:space="preserve"
                   x="611" y="370" clip-path="url(#clipPath3)" stroke="none">列重命名</text><text xml:space="preserve"
                   x="611" y="90" clip-path="url(#clipPath4)" stroke="none">列重命名</text><text xml:space="preserve"
                   x="745" y="90" clip-path="url(#clipPath5)" stroke="none">写出主题库</text><text xml:space="preserve"
-                  x="709" y="105" clip-path="url(#clipPath5)" stroke="none">各年处罚金额（含公安）</text><text xml:space="preserve"
-                  x="715" y="120" clip-path="url(#clipPath5)" stroke="none">year_fine_nonega.csv</text><text xml:space="preserve"
+                  x="679" y="105" clip-path="url(#clipPath5)" stroke="none">各年各案件种类处罚金额（含公安）</text><text xml:space="preserve"
+                  x="700" y="120" clip-path="url(#clipPath5)" stroke="none">year_fine_type_nonega.csv</text><text xml:space="preserve"
                   x="503" y="90" clip-path="url(#clipPath6)" stroke="none">计算</text><text xml:space="preserve"
-                  x="473" y="105" clip-path="url(#clipPath6)" stroke="none">各年的罚款金额</text><text xml:space="preserve"
+                  x="443" y="105" clip-path="url(#clipPath6)" stroke="none">各年各案件种类的罚款金额</text><text xml:space="preserve"
                   x="397" y="190" clip-path="url(#clipPath7)" stroke="none">过滤掉</text><text xml:space="preserve"
                   x="403" y="205" clip-path="url(#clipPath7)" stroke="none">公安</text><text xml:space="preserve"
                   x="745" y="230" clip-path="url(#clipPath8)" stroke="none">写出主题库</text><text xml:space="preserve"
-                  x="691" y="245" clip-path="url(#clipPath8)" stroke="none">各年各区划处罚金额（含公安）</text><text xml:space="preserve"
-                  x="698" y="260" clip-path="url(#clipPath8)" stroke="none">year_quyu_fine_nonega.csv</text><text xml:space="preserve"
+                  x="661" y="245" clip-path="url(#clipPath8)" stroke="none">各年各区划各案件种类处罚金额（含公安）</text><text xml:space="preserve"
+                  x="684" y="260" clip-path="url(#clipPath8)" stroke="none">year_quyu_type_fine_nonega.csv</text><text xml:space="preserve"
                   x="503" y="230" clip-path="url(#clipPath9)" stroke="none">计算</text><text xml:space="preserve"
-                  x="455" y="245" clip-path="url(#clipPath9)" stroke="none">各年各区划的罚款金额</text><text xml:space="preserve"
+                  x="425" y="245" clip-path="url(#clipPath9)" stroke="none">各年各区划各案件种类的罚款金额</text><text xml:space="preserve"
                   x="611" y="230" clip-path="url(#clipPath10)" stroke="none">列重命名</text><text xml:space="preserve"
                   x="611" y="530" clip-path="url(#clipPath11)" stroke="none">列重命名</text><text xml:space="preserve"
                   x="745" y="530" clip-path="url(#clipPath12)" stroke="none">写出主题库</text><text xml:space="preserve"
-                  x="691" y="545" clip-path="url(#clipPath12)" stroke="none">各年各区划处罚金额（含公安）</text><text xml:space="preserve"
-                  x="707" y="560" clip-path="url(#clipPath12)" stroke="none">year_quyu_fine_isga.csv</text><text xml:space="preserve"
+                  x="661" y="545" clip-path="url(#clipPath12)" stroke="none">各年各区划各案件种类处罚金额（含公安）</text><text xml:space="preserve"
+                  x="693" y="560" clip-path="url(#clipPath12)" stroke="none">year_quyu_type_fine_isga.csv</text><text xml:space="preserve"
                   x="503" y="530" clip-path="url(#clipPath13)" stroke="none">计算</text><text xml:space="preserve"
-                  x="455" y="545" clip-path="url(#clipPath13)" stroke="none">各年各区划的罚款金额</text><text xml:space="preserve"
+                  x="425" y="545" clip-path="url(#clipPath13)" stroke="none">各年各区划各案件种类的罚款金额</text><text xml:space="preserve"
                   x="611" y="690" clip-path="url(#clipPath14)" stroke="none">列重命名</text><text xml:space="preserve"
                   x="503" y="690" clip-path="url(#clipPath15)" stroke="none">计算</text><text xml:space="preserve"
-                  x="437" y="705" clip-path="url(#clipPath15)" stroke="none">各年各行业各区划的罚款金额</text><text xml:space="preserve"
+                  x="407" y="705" clip-path="url(#clipPath15)" stroke="none">各年各行业各区划各案件种类的罚款金额</text><text xml:space="preserve"
                   x="745" y="690" clip-path="url(#clipPath16)" stroke="none">写出主题库</text><text xml:space="preserve"
-                  x="691" y="705" clip-path="url(#clipPath16)" stroke="none">各年各行业处罚金额（含公安）</text><text xml:space="preserve"
-                  x="684" y="720" clip-path="url(#clipPath16)" stroke="none">year_hangye_quyu_fine_isga.csv</text><text xml:space="preserve"
+                  x="643" y="705" clip-path="url(#clipPath16)" stroke="none">各年各行业各区划各案件种类处罚金额（含公安）</text><text xml:space="preserve"
+                  x="669" y="720" clip-path="url(#clipPath16)" stroke="none">year_hangye_quyu_type_fine_isga.csv</text><text xml:space="preserve"
                   x="745" y="830" clip-path="url(#clipPath17)" stroke="none">写出主题库</text><text xml:space="preserve"
-                  x="709" y="845" clip-path="url(#clipPath17)" stroke="none">各年处罚金额（含公安）</text><text xml:space="preserve"
-                  x="724" y="860" clip-path="url(#clipPath17)" stroke="none">year_fine_isga.csv</text><text xml:space="preserve"
+                  x="679" y="845" clip-path="url(#clipPath17)" stroke="none">各年各案件种类处罚金额（含公安）</text><text xml:space="preserve"
+                  x="709" y="860" clip-path="url(#clipPath17)" stroke="none">year_type_fine_isga.csv</text><text xml:space="preserve"
                   x="503" y="830" clip-path="url(#clipPath18)" stroke="none">计算</text><text xml:space="preserve"
-                  x="473" y="845" clip-path="url(#clipPath18)" stroke="none">各年的罚款金额</text><text xml:space="preserve"
+                  x="443" y="845" clip-path="url(#clipPath18)" stroke="none">各年各案件种类的罚款金额</text><text xml:space="preserve"
                   x="611" y="830" clip-path="url(#clipPath19)" stroke="none">列重命名</text><text xml:space="preserve"
                   x="65" y="511" clip-path="url(#clipPath20)" stroke="none">读取业务库</text><text xml:space="preserve"
                   x="53" y="526" clip-path="url(#clipPath20)" stroke="none">处罚案件基础表</text><text xml:space="preserve"
@@ -1275,20 +1275,20 @@ WQAAAABJRU5ErkJggg==" xlink:actuate="onLoad"/>
                      points=" 231 455 240 459 231 464" stroke="none"/>
             <text x="745" y="370" clip-path="url(#clipPath1)"
                   text-rendering="optimizeLegibility" stroke="none"
-                  xml:space="preserve">写出主题库</text><text x="691" y="385"
+                  xml:space="preserve">写出主题库</text><text x="661" y="385"
                   clip-path="url(#clipPath1)"
                   text-rendering="optimizeLegibility" stroke="none"
-                  xml:space="preserve">各年各行业处罚金额（含公安）</text><text x="700"
+                  xml:space="preserve">各年各行业各案件种类处罚金额（含公安）</text><text x="686"
                   y="400" clip-path="url(#clipPath1)"
                   text-rendering="optimizeLegibility" stroke="none"
-                  xml:space="preserve">year_hangye_fine_isga.csv</text><text x="503"
+                  xml:space="preserve">year_hangye_type_fine_isga.csv</text><text x="503"
                   y="370" clip-path="url(#clipPath2)"
                   text-rendering="optimizeLegibility" stroke="none"
-                  xml:space="preserve">计算</text><text x="455" y="385"
+                  xml:space="preserve">计算</text><text x="425" y="385"
                   clip-path="url(#clipPath2)"
                   text-rendering="optimizeLegibility" stroke="none"
-                  xml:space="preserve">各年各行业的罚款金额</text><text x="611" y="370"
-                  clip-path="url(#clipPath3)"
+                  xml:space="preserve">各年各行业各案件种类的罚款金额</text><text x="611"
+                  y="370" clip-path="url(#clipPath3)"
                   text-rendering="optimizeLegibility" stroke="none"
                   xml:space="preserve">列重命名</text><text x="611" y="90"
                   clip-path="url(#clipPath4)"
@@ -1296,19 +1296,19 @@ WQAAAABJRU5ErkJggg==" xlink:actuate="onLoad"/>
                   xml:space="preserve">列重命名</text><text x="745" y="90"
                   clip-path="url(#clipPath5)"
                   text-rendering="optimizeLegibility" stroke="none"
-                  xml:space="preserve">写出主题库</text><text x="709" y="105"
+                  xml:space="preserve">写出主题库</text><text x="679" y="105"
                   clip-path="url(#clipPath5)"
                   text-rendering="optimizeLegibility" stroke="none"
-                  xml:space="preserve">各年处罚金额（含公安）</text><text x="715" y="120"
-                  clip-path="url(#clipPath5)"
+                  xml:space="preserve">各年各案件种类处罚金额（含公安）</text><text x="700"
+                  y="120" clip-path="url(#clipPath5)"
                   text-rendering="optimizeLegibility" stroke="none"
-                  xml:space="preserve">year_fine_nonega.csv</text><text x="503"
+                  xml:space="preserve">year_fine_type_nonega.csv</text><text x="503"
                   y="90" clip-path="url(#clipPath6)"
                   text-rendering="optimizeLegibility" stroke="none"
-                  xml:space="preserve">计算</text><text x="473" y="105"
+                  xml:space="preserve">计算</text><text x="443" y="105"
                   clip-path="url(#clipPath6)"
                   text-rendering="optimizeLegibility" stroke="none"
-                  xml:space="preserve">各年的罚款金额</text><text x="397" y="190"
+                  xml:space="preserve">各年各案件种类的罚款金额</text><text x="397" y="190"
                   clip-path="url(#clipPath7)"
                   text-rendering="optimizeLegibility" stroke="none"
                   xml:space="preserve">过滤掉</text><text x="403" y="205"
@@ -1317,20 +1317,20 @@ WQAAAABJRU5ErkJggg==" xlink:actuate="onLoad"/>
                   xml:space="preserve">公安</text><text x="745" y="230"
                   clip-path="url(#clipPath8)"
                   text-rendering="optimizeLegibility" stroke="none"
-                  xml:space="preserve">写出主题库</text><text x="691" y="245"
+                  xml:space="preserve">写出主题库</text><text x="661" y="245"
                   clip-path="url(#clipPath8)"
                   text-rendering="optimizeLegibility" stroke="none"
-                  xml:space="preserve">各年各区划处罚金额（含公安）</text><text x="698"
+                  xml:space="preserve">各年各区划各案件种类处罚金额（含公安）</text><text x="684"
                   y="260" clip-path="url(#clipPath8)"
                   text-rendering="optimizeLegibility" stroke="none"
-                  xml:space="preserve">year_quyu_fine_nonega.csv</text><text x="503"
+                  xml:space="preserve">year_quyu_type_fine_nonega.csv</text><text x="503"
                   y="230" clip-path="url(#clipPath9)"
                   text-rendering="optimizeLegibility" stroke="none"
-                  xml:space="preserve">计算</text><text x="455" y="245"
+                  xml:space="preserve">计算</text><text x="425" y="245"
                   clip-path="url(#clipPath9)"
                   text-rendering="optimizeLegibility" stroke="none"
-                  xml:space="preserve">各年各区划的罚款金额</text><text x="611" y="230"
-                  clip-path="url(#clipPath10)"
+                  xml:space="preserve">各年各区划各案件种类的罚款金额</text><text x="611"
+                  y="230" clip-path="url(#clipPath10)"
                   text-rendering="optimizeLegibility" stroke="none"
                   xml:space="preserve">列重命名</text><text x="611" y="530"
                   clip-path="url(#clipPath11)"
@@ -1338,52 +1338,52 @@ WQAAAABJRU5ErkJggg==" xlink:actuate="onLoad"/>
                   xml:space="preserve">列重命名</text><text x="745" y="530"
                   clip-path="url(#clipPath12)"
                   text-rendering="optimizeLegibility" stroke="none"
-                  xml:space="preserve">写出主题库</text><text x="691" y="545"
+                  xml:space="preserve">写出主题库</text><text x="661" y="545"
                   clip-path="url(#clipPath12)"
                   text-rendering="optimizeLegibility" stroke="none"
-                  xml:space="preserve">各年各区划处罚金额（含公安）</text><text x="707"
+                  xml:space="preserve">各年各区划各案件种类处罚金额（含公安）</text><text x="693"
                   y="560" clip-path="url(#clipPath12)"
                   text-rendering="optimizeLegibility" stroke="none"
-                  xml:space="preserve">year_quyu_fine_isga.csv</text><text x="503"
+                  xml:space="preserve">year_quyu_type_fine_isga.csv</text><text x="503"
                   y="530" clip-path="url(#clipPath13)"
                   text-rendering="optimizeLegibility" stroke="none"
-                  xml:space="preserve">计算</text><text x="455" y="545"
+                  xml:space="preserve">计算</text><text x="425" y="545"
                   clip-path="url(#clipPath13)"
                   text-rendering="optimizeLegibility" stroke="none"
-                  xml:space="preserve">各年各区划的罚款金额</text><text x="611" y="690"
-                  clip-path="url(#clipPath14)"
+                  xml:space="preserve">各年各区划各案件种类的罚款金额</text><text x="611"
+                  y="690" clip-path="url(#clipPath14)"
                   text-rendering="optimizeLegibility" stroke="none"
                   xml:space="preserve">列重命名</text><text x="503" y="690"
                   clip-path="url(#clipPath15)"
                   text-rendering="optimizeLegibility" stroke="none"
-                  xml:space="preserve">计算</text><text x="437" y="705"
+                  xml:space="preserve">计算</text><text x="407" y="705"
                   clip-path="url(#clipPath15)"
                   text-rendering="optimizeLegibility" stroke="none"
-                  xml:space="preserve">各年各行业各区划的罚款金额</text><text x="745" y="690"
+                  xml:space="preserve">各年各行业各区划各案件种类的罚款金额</text><text x="745"
+                  y="690" clip-path="url(#clipPath16)"
+                  text-rendering="optimizeLegibility" stroke="none"
+                  xml:space="preserve">写出主题库</text><text x="643" y="705"
                   clip-path="url(#clipPath16)"
                   text-rendering="optimizeLegibility" stroke="none"
-                  xml:space="preserve">写出主题库</text><text x="691" y="705"
-                  clip-path="url(#clipPath16)"
-                  text-rendering="optimizeLegibility" stroke="none"
-                  xml:space="preserve">各年各行业处罚金额（含公安）</text><text x="684"
+                  xml:space="preserve">各年各行业各区划各案件种类处罚金额（含公安）</text><text x="669"
                   y="720" clip-path="url(#clipPath16)"
                   text-rendering="optimizeLegibility" stroke="none"
-                  xml:space="preserve">year_hangye_quyu_fine_isga.csv</text><text x="745"
+                  xml:space="preserve">year_hangye_quyu_type_fine_isga.csv</text><text x="745"
                   y="830" clip-path="url(#clipPath17)"
                   text-rendering="optimizeLegibility" stroke="none"
-                  xml:space="preserve">写出主题库</text><text x="709" y="845"
+                  xml:space="preserve">写出主题库</text><text x="679" y="845"
                   clip-path="url(#clipPath17)"
                   text-rendering="optimizeLegibility" stroke="none"
-                  xml:space="preserve">各年处罚金额（含公安）</text><text x="724" y="860"
-                  clip-path="url(#clipPath17)"
+                  xml:space="preserve">各年各案件种类处罚金额（含公安）</text><text x="709"
+                  y="860" clip-path="url(#clipPath17)"
                   text-rendering="optimizeLegibility" stroke="none"
-                  xml:space="preserve">year_fine_isga.csv</text><text x="503"
+                  xml:space="preserve">year_type_fine_isga.csv</text><text x="503"
                   y="830" clip-path="url(#clipPath18)"
                   text-rendering="optimizeLegibility" stroke="none"
-                  xml:space="preserve">计算</text><text x="473" y="845"
+                  xml:space="preserve">计算</text><text x="443" y="845"
                   clip-path="url(#clipPath18)"
                   text-rendering="optimizeLegibility" stroke="none"
-                  xml:space="preserve">各年的罚款金额</text><text x="611" y="830"
+                  xml:space="preserve">各年各案件种类的罚款金额</text><text x="611" y="830"
                   clip-path="url(#clipPath19)"
                   text-rendering="optimizeLegibility" stroke="none"
                   xml:space="preserve">列重命名</text><text x="65" y="511"
@@ -2375,102 +2375,48 @@ WQAAAABJRU5ErkJggg==" xlink:actuate="onLoad"/>
         <g fill="rgb(150,150,150)" text-rendering="optimizeLegibility"
            font-family="&apos;Microsoft YaHei UI&apos;" stroke-linecap="butt"
            stroke="rgb(150,150,150)">
-            <line clip-path="url(#clipPath83)" fill="none" x1="240" x2="248"
-                  y1="459" y2="459"/>
-            <line clip-path="url(#clipPath83)" fill="none" x1="248" x2="481"
-                  y1="459" y2="318"/>
-            <line clip-path="url(#clipPath83)" fill="none" x1="481" x2="489"
-                  y1="318" y2="318"/>
             <line clip-path="url(#clipPath83)" fill="none" x1="660" x2="668"
-                  y1="178" y2="178"/>
+                  y1="778" y2="778"/>
             <line clip-path="url(#clipPath83)" fill="none" x1="668" x2="741"
-                  y1="178" y2="178"/>
+                  y1="778" y2="778"/>
             <line clip-path="url(#clipPath83)" fill="none" x1="741" x2="749"
+                  y1="778" y2="778"/>
+            <line clip-path="url(#clipPath83)" fill="none" x1="540" x2="548"
                   y1="178" y2="178"/>
-            <line clip-path="url(#clipPath83)" fill="none" x1="540" x2="548"
-                  y1="38" y2="38"/>
             <line clip-path="url(#clipPath83)" fill="none" x1="548" x2="601"
-                  y1="38" y2="38"/>
+                  y1="178" y2="178"/>
             <line clip-path="url(#clipPath83)" fill="none" x1="601" x2="609"
-                  y1="38" y2="38"/>
-            <line clip-path="url(#clipPath83)" fill="none" x1="540" x2="548"
-                  y1="778" y2="778"/>
-            <line clip-path="url(#clipPath83)" fill="none" x1="548" x2="601"
-                  y1="778" y2="778"/>
-            <line clip-path="url(#clipPath83)" fill="none" x1="601" x2="609"
-                  y1="778" y2="778"/>
-            <line clip-path="url(#clipPath83)" fill="none" x1="540" x2="548"
-                  y1="318" y2="318"/>
-            <line clip-path="url(#clipPath83)" fill="none" x1="548" x2="601"
-                  y1="318" y2="318"/>
-            <line clip-path="url(#clipPath83)" fill="none" x1="601" x2="609"
-                  y1="318" y2="318"/>
+                  y1="178" y2="178"/>
             <line clip-path="url(#clipPath83)" fill="none" x1="440" x2="448"
                   y1="138" y2="138"/>
             <line clip-path="url(#clipPath83)" fill="none" x1="448" x2="481"
                   y1="138" y2="38"/>
             <line clip-path="url(#clipPath83)" fill="none" x1="481" x2="489"
                   y1="38" y2="38"/>
-            <line clip-path="url(#clipPath83)" fill="none" x1="440" x2="448"
-                  y1="138" y2="138"/>
-            <line clip-path="url(#clipPath83)" fill="none" x1="448" x2="481"
-                  y1="138" y2="178"/>
-            <line clip-path="url(#clipPath83)" fill="none" x1="481" x2="489"
-                  y1="178" y2="178"/>
+            <line clip-path="url(#clipPath83)" fill="none" x1="660" x2="668"
+                  y1="318" y2="318"/>
+            <line clip-path="url(#clipPath83)" fill="none" x1="668" x2="741"
+                  y1="318" y2="318"/>
+            <line clip-path="url(#clipPath83)" fill="none" x1="741" x2="749"
+                  y1="318" y2="318"/>
             <line clip-path="url(#clipPath83)" fill="none" x1="540" x2="548"
-                  y1="478" y2="478"/>
+                  y1="38" y2="38"/>
             <line clip-path="url(#clipPath83)" fill="none" x1="548" x2="601"
-                  y1="478" y2="478"/>
+                  y1="38" y2="38"/>
             <line clip-path="url(#clipPath83)" fill="none" x1="601" x2="609"
-                  y1="478" y2="478"/>
+                  y1="38" y2="38"/>
             <line clip-path="url(#clipPath83)" fill="none" x1="240" x2="248"
                   y1="459" y2="459"/>
-            <line clip-path="url(#clipPath83)" fill="none" x1="248" x2="381"
-                  y1="459" y2="138"/>
-            <line clip-path="url(#clipPath83)" fill="none" x1="381" x2="389"
-                  y1="138" y2="138"/>
-            <line clip-path="url(#clipPath83)" fill="none" x1="540" x2="548"
-                  y1="178" y2="178"/>
-            <line clip-path="url(#clipPath83)" fill="none" x1="548" x2="601"
-                  y1="178" y2="178"/>
-            <line clip-path="url(#clipPath83)" fill="none" x1="601" x2="609"
-                  y1="178" y2="178"/>
-            <line clip-path="url(#clipPath83)" fill="none" x1="660" x2="668"
-                  y1="478" y2="478"/>
-            <line clip-path="url(#clipPath83)" fill="none" x1="668" x2="741"
-                  y1="478" y2="478"/>
-            <line clip-path="url(#clipPath83)" fill="none" x1="741" x2="749"
-                  y1="478" y2="478"/>
-            <line clip-path="url(#clipPath83)" fill="none" x1="660" x2="668"
-                  y1="638" y2="638"/>
-            <line clip-path="url(#clipPath83)" fill="none" x1="668" x2="741"
-                  y1="638" y2="638"/>
-            <line clip-path="url(#clipPath83)" fill="none" x1="741" x2="749"
-                  y1="638" y2="638"/>
-            <line clip-path="url(#clipPath83)" fill="none" x1="540" x2="548"
-                  y1="638" y2="638"/>
-            <line clip-path="url(#clipPath83)" fill="none" x1="548" x2="601"
-                  y1="638" y2="638"/>
-            <line clip-path="url(#clipPath83)" fill="none" x1="601" x2="609"
-                  y1="638" y2="638"/>
+            <line clip-path="url(#clipPath83)" fill="none" x1="248" x2="481"
+                  y1="459" y2="318"/>
+            <line clip-path="url(#clipPath83)" fill="none" x1="481" x2="489"
+                  y1="318" y2="318"/>
             <line clip-path="url(#clipPath83)" fill="none" x1="240" x2="248"
                   y1="459" y2="459"/>
             <line clip-path="url(#clipPath83)" fill="none" x1="248" x2="481"
                   y1="459" y2="478"/>
             <line clip-path="url(#clipPath83)" fill="none" x1="481" x2="489"
                   y1="478" y2="478"/>
-            <line clip-path="url(#clipPath83)" fill="none" x1="660" x2="668"
-                  y1="38" y2="38"/>
-            <line clip-path="url(#clipPath83)" fill="none" x1="668" x2="741"
-                  y1="38" y2="38"/>
-            <line clip-path="url(#clipPath83)" fill="none" x1="741" x2="749"
-                  y1="38" y2="38"/>
-            <line clip-path="url(#clipPath83)" fill="none" x1="240" x2="248"
-                  y1="459" y2="459"/>
-            <line clip-path="url(#clipPath83)" fill="none" x1="248" x2="481"
-                  y1="459" y2="638"/>
-            <line clip-path="url(#clipPath83)" fill="none" x1="481" x2="489"
-                  y1="638" y2="638"/>
             <line clip-path="url(#clipPath83)" fill="none" x1="240" x2="248"
                   y1="459" y2="459"/>
             <line clip-path="url(#clipPath83)" fill="none" x1="248" x2="481"
@@ -2478,23 +2424,77 @@ WQAAAABJRU5ErkJggg==" xlink:actuate="onLoad"/>
             <line clip-path="url(#clipPath83)" fill="none" x1="481" x2="489"
                   y1="778" y2="778"/>
             <line clip-path="url(#clipPath83)" fill="none" x1="660" x2="668"
-                  y1="778" y2="778"/>
+                  y1="38" y2="38"/>
             <line clip-path="url(#clipPath83)" fill="none" x1="668" x2="741"
-                  y1="778" y2="778"/>
+                  y1="38" y2="38"/>
             <line clip-path="url(#clipPath83)" fill="none" x1="741" x2="749"
-                  y1="778" y2="778"/>
+                  y1="38" y2="38"/>
             <line clip-path="url(#clipPath83)" fill="none" x1="660" x2="668"
-                  y1="318" y2="318"/>
+                  y1="478" y2="478"/>
             <line clip-path="url(#clipPath83)" fill="none" x1="668" x2="741"
-                  y1="318" y2="318"/>
+                  y1="478" y2="478"/>
             <line clip-path="url(#clipPath83)" fill="none" x1="741" x2="749"
+                  y1="478" y2="478"/>
+            <line clip-path="url(#clipPath83)" fill="none" x1="540" x2="548"
                   y1="318" y2="318"/>
+            <line clip-path="url(#clipPath83)" fill="none" x1="548" x2="601"
+                  y1="318" y2="318"/>
+            <line clip-path="url(#clipPath83)" fill="none" x1="601" x2="609"
+                  y1="318" y2="318"/>
+            <line clip-path="url(#clipPath83)" fill="none" x1="540" x2="548"
+                  y1="478" y2="478"/>
+            <line clip-path="url(#clipPath83)" fill="none" x1="548" x2="601"
+                  y1="478" y2="478"/>
+            <line clip-path="url(#clipPath83)" fill="none" x1="601" x2="609"
+                  y1="478" y2="478"/>
+            <line clip-path="url(#clipPath83)" fill="none" x1="540" x2="548"
+                  y1="778" y2="778"/>
+            <line clip-path="url(#clipPath83)" fill="none" x1="548" x2="601"
+                  y1="778" y2="778"/>
+            <line clip-path="url(#clipPath83)" fill="none" x1="601" x2="609"
+                  y1="778" y2="778"/>
+            <line clip-path="url(#clipPath83)" fill="none" x1="540" x2="548"
+                  y1="638" y2="638"/>
+            <line clip-path="url(#clipPath83)" fill="none" x1="548" x2="601"
+                  y1="638" y2="638"/>
+            <line clip-path="url(#clipPath83)" fill="none" x1="601" x2="609"
+                  y1="638" y2="638"/>
+            <line clip-path="url(#clipPath83)" fill="none" x1="660" x2="668"
+                  y1="178" y2="178"/>
+            <line clip-path="url(#clipPath83)" fill="none" x1="668" x2="741"
+                  y1="178" y2="178"/>
+            <line clip-path="url(#clipPath83)" fill="none" x1="741" x2="749"
+                  y1="178" y2="178"/>
+            <line clip-path="url(#clipPath83)" fill="none" x1="660" x2="668"
+                  y1="638" y2="638"/>
+            <line clip-path="url(#clipPath83)" fill="none" x1="668" x2="741"
+                  y1="638" y2="638"/>
+            <line clip-path="url(#clipPath83)" fill="none" x1="741" x2="749"
+                  y1="638" y2="638"/>
             <line clip-path="url(#clipPath83)" fill="none" x1="120" x2="128"
                   y1="459" y2="459"/>
             <line clip-path="url(#clipPath83)" fill="none" x1="128" x2="181"
                   y1="459" y2="459"/>
             <line clip-path="url(#clipPath83)" fill="none" x1="181" x2="189"
                   y1="459" y2="459"/>
+            <line clip-path="url(#clipPath83)" fill="none" x1="240" x2="248"
+                  y1="459" y2="459"/>
+            <line clip-path="url(#clipPath83)" fill="none" x1="248" x2="381"
+                  y1="459" y2="138"/>
+            <line clip-path="url(#clipPath83)" fill="none" x1="381" x2="389"
+                  y1="138" y2="138"/>
+            <line clip-path="url(#clipPath83)" fill="none" x1="440" x2="448"
+                  y1="138" y2="138"/>
+            <line clip-path="url(#clipPath83)" fill="none" x1="448" x2="481"
+                  y1="138" y2="178"/>
+            <line clip-path="url(#clipPath83)" fill="none" x1="481" x2="489"
+                  y1="178" y2="178"/>
+            <line clip-path="url(#clipPath83)" fill="none" x1="240" x2="248"
+                  y1="459" y2="459"/>
+            <line clip-path="url(#clipPath83)" fill="none" x1="248" x2="481"
+                  y1="459" y2="638"/>
+            <line clip-path="url(#clipPath83)" fill="none" x1="481" x2="489"
+                  y1="638" y2="638"/>
         </g>
     </g>
 </svg>

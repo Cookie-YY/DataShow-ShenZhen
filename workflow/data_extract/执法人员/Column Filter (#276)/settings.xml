@@ -9,7 +9,7 @@
 <config key="column-filter">
 <entry key="filter-type" type="xstring" value="STANDARD"/>
 <config key="included_names">
-<entry key="array-size" type="xint" value="13"/>
+<entry key="array-size" type="xint" value="14"/>
 <entry key="0" type="xstring" value="PR_PERSON"/>
 <entry key="1" type="xstring" value="SEX"/>
 <entry key="2" type="xstring" value="PERSON_IDCARD"/>
@@ -21,8 +21,9 @@
 <entry key="8" type="xstring" value="SHIJI"/>
 <entry key="9" type="xstring" value="SHENGJI"/>
 <entry key="10" type="xstring" value="BUJI"/>
-<entry key="11" type="xstring" value="CODE_ALL"/>
-<entry key="12" type="xstring" value="AGE_RANGE"/>
+<entry key="11" type="xstring" value="ALL_CODE"/>
+<entry key="12" type="xstring" value="CODE_ALL"/>
+<entry key="13" type="xstring" value="AGE_RANGE"/>
 </config>
 <config key="excluded_names">
 <entry key="array-size" type="xint" value="7"/>

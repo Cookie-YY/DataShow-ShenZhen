@@ -8,7 +8,7 @@
 <entry key="authored-by" type="xstring" value="Cookie"/>
 <entry key="authored-when" type="xstring" value="2019-07-04 10:33:43 +0800"/>
 <entry key="lastEdited-by" type="xstring" value="Cookie"/>
-<entry key="lastEdited-when" type="xstring" value="2019-09-21 14:39:48 +0800"/>
+<entry key="lastEdited-when" type="xstring" value="2019-10-09 17:19:27 +0800"/>
 </config>
 <entry key="customDescription" type="xstring" isnull="true" value=""/>
 <entry key="state" type="xstring" value="IDLE"/>
@@ -1598,7 +1598,7 @@
 <entry key="workflow.editor.ShowGrid" type="xboolean" value="true"/>
 <entry key="workflow.editor.gridX" type="xint" value="20"/>
 <entry key="workflow.editor.gridY" type="xint" value="20"/>
-<entry key="workflow.editor.zoomLevel" type="xdouble" value="1.0"/>
+<entry key="workflow.editor.zoomLevel" type="xdouble" value="0.5"/>
 <entry key="workflow.editor.curvedConnections" type="xboolean" value="false"/>
 <entry key="workflow.editor.connectionWidth" type="xint" value="1"/>
 </config>

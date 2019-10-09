@@ -6,7 +6,7 @@
 <entry key="memory_policy" type="xstring" value="CacheSmallInMemory"/>
 </config>
 <config key="model">
-<entry key="statement" type="xstring" value="SELECT ID, SUBJECT_ID, IS_CRIMINAL, EFFECTIVE_DATE, IS_DELETE , POWER_MOLD, POWER_TYPE FROM TBL_POWER_LIST"/>
+<entry key="statement" type="xstring" value="SELECT ID,  IS_CRIMINAL, EFFECTIVE_DATE, IS_DELETE , POWER_MOLD, POWER_TYPE FROM TBL_POWER_LIST"/>
 <entry key="execute_without_configure" type="xboolean" value="true"/>
 <entry key="driver" type="xstring" value="oracle.jdbc.OracleDriver"/>
 <entry key="database" type="xstring" value="jdbc:oracle:thin:@127.0.0.1:1521:ORCL"/>

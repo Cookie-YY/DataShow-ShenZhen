@@ -12,7 +12,7 @@
 <entry key="1" type="xstring" value="// $double column name$ &gt; 5.0 =&gt; FALSE"/>
 <entry key="2" type="xstring" value="// $string column name$ LIKE &quot;*blue*&quot; =&gt; FALSE"/>
 <entry key="3" type="xstring" value="// TRUE =&gt; TRUE"/>
-<entry key="4" type="xstring" value="$ENFORCE_TYPE$=&quot;03&quot; OR $ENFORCE_TYPE$=&quot;02&quot; OR $ENFORCE_TYPE$=&quot;01&quot; =&gt; TRUE"/>
+<entry key="4" type="xstring" value="$PUNISH_ENFORCETYPE$=&quot;03&quot; OR $PUNISH_ENFORCETYPE$=&quot;02&quot; OR $PUNISH_ENFORCETYPE$=&quot;01&quot; =&gt; TRUE"/>
 </config>
 <entry key="new-column-name" type="xstring" value=""/>
 <entry key="replace-column-name" type="xstring" value=""/>

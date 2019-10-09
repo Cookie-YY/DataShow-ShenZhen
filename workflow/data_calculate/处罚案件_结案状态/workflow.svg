@@ -141,7 +141,7 @@
                 <path d="M541 33 L564 33 L564 44 L541 44 L541 33 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath43">
-                <path d="M-1 -1 L986 -1 L986 584 L-1 584 L-1 -1 Z"/>
+                <path d="M-1 -1 L1092 -1 L1092 740 L-1 740 L-1 -1 Z"/>
             </clipPath>
         </defs>
         <g stroke-miterlimit="0" stroke-width="0"
@@ -158,11 +158,11 @@
                   x="620" y="90" clip-path="url(#clipPath4)" stroke="none">计算</text><text xml:space="preserve"
                   x="566" y="105" clip-path="url(#clipPath4)" stroke="none">各年各结案状态的案件量</text><text xml:space="preserve"
                   x="842" y="90" clip-path="url(#clipPath5)" stroke="none">写出主题库</text><text xml:space="preserve"
-                  x="800" y="105" clip-path="url(#clipPath5)" stroke="none">各年各案件来源（无公安）</text><text xml:space="preserve"
+                  x="800" y="105" clip-path="url(#clipPath5)" stroke="none">各年各结案状态（无公安）</text><text xml:space="preserve"
                   x="794" y="120" clip-path="url(#clipPath5)" stroke="none">year_closestate_nonega.csv</text><text xml:space="preserve"
                   x="728" y="90" clip-path="url(#clipPath6)" stroke="none">列重命名</text><text xml:space="preserve"
                   x="742" y="230" clip-path="url(#clipPath7)" stroke="none">写出主题库</text><text xml:space="preserve"
-                  x="700" y="245" clip-path="url(#clipPath7)" stroke="none">各年各案件来源（含公安）</text><text xml:space="preserve"
+                  x="700" y="245" clip-path="url(#clipPath7)" stroke="none">各年各结案状态（含公安）</text><text xml:space="preserve"
                   x="702" y="260" clip-path="url(#clipPath7)" stroke="none">year_closestate_isga.csv</text><text xml:space="preserve"
                   x="520" y="230" clip-path="url(#clipPath8)" stroke="none">计算</text><text xml:space="preserve"
                   x="466" y="245" clip-path="url(#clipPath8)" stroke="none">各年各结案状态的案件量</text><text xml:space="preserve"
@@ -668,7 +668,7 @@ WQAAAABJRU5ErkJggg==" xlink:actuate="onLoad"/>
                   xml:space="preserve">写出主题库</text><text x="800" y="105"
                   clip-path="url(#clipPath5)"
                   text-rendering="optimizeLegibility" stroke="none"
-                  xml:space="preserve">各年各案件来源（无公安）</text><text x="794" y="120"
+                  xml:space="preserve">各年各结案状态（无公安）</text><text x="794" y="120"
                   clip-path="url(#clipPath5)"
                   text-rendering="optimizeLegibility" stroke="none"
                   xml:space="preserve">year_closestate_nonega.csv</text><text x="728"
@@ -680,7 +680,7 @@ WQAAAABJRU5ErkJggg==" xlink:actuate="onLoad"/>
                   xml:space="preserve">写出主题库</text><text x="700" y="245"
                   clip-path="url(#clipPath7)"
                   text-rendering="optimizeLegibility" stroke="none"
-                  xml:space="preserve">各年各案件来源（含公安）</text><text x="702" y="260"
+                  xml:space="preserve">各年各结案状态（含公安）</text><text x="702" y="260"
                   clip-path="url(#clipPath7)"
                   text-rendering="optimizeLegibility" stroke="none"
                   xml:space="preserve">year_closestate_isga.csv</text><text x="520"
@@ -1172,36 +1172,6 @@ WQAAAABJRU5ErkJggg==" xlink:actuate="onLoad"/>
         <g fill="rgb(150,150,150)" text-rendering="optimizeLegibility"
            font-family="&apos;Microsoft YaHei UI&apos;" stroke-linecap="butt"
            stroke="rgb(150,150,150)">
-            <line clip-path="url(#clipPath43)" fill="none" x1="397" x2="405"
-                  y1="118" y2="118"/>
-            <line clip-path="url(#clipPath43)" fill="none" x1="405" x2="498"
-                  y1="118" y2="38"/>
-            <line clip-path="url(#clipPath43)" fill="none" x1="498" x2="506"
-                  y1="38" y2="38"/>
-            <line clip-path="url(#clipPath43)" fill="none" x1="137" x2="145"
-                  y1="118" y2="118"/>
-            <line clip-path="url(#clipPath43)" fill="none" x1="145" x2="238"
-                  y1="118" y2="118"/>
-            <line clip-path="url(#clipPath43)" fill="none" x1="238" x2="246"
-                  y1="118" y2="118"/>
-            <line clip-path="url(#clipPath43)" fill="none" x1="557" x2="565"
-                  y1="178" y2="178"/>
-            <line clip-path="url(#clipPath43)" fill="none" x1="565" x2="618"
-                  y1="178" y2="178"/>
-            <line clip-path="url(#clipPath43)" fill="none" x1="618" x2="626"
-                  y1="178" y2="178"/>
-            <line clip-path="url(#clipPath43)" fill="none" x1="297" x2="305"
-                  y1="118" y2="118"/>
-            <line clip-path="url(#clipPath43)" fill="none" x1="305" x2="338"
-                  y1="118" y2="118"/>
-            <line clip-path="url(#clipPath43)" fill="none" x1="338" x2="346"
-                  y1="118" y2="118"/>
-            <line clip-path="url(#clipPath43)" fill="none" x1="657" x2="665"
-                  y1="38" y2="38"/>
-            <line clip-path="url(#clipPath43)" fill="none" x1="665" x2="718"
-                  y1="38" y2="38"/>
-            <line clip-path="url(#clipPath43)" fill="none" x1="718" x2="726"
-                  y1="38" y2="38"/>
             <line clip-path="url(#clipPath43)" fill="none" x1="677" x2="685"
                   y1="178" y2="178"/>
             <line clip-path="url(#clipPath43)" fill="none" x1="685" x2="738"
@@ -1209,16 +1179,22 @@ WQAAAABJRU5ErkJggg==" xlink:actuate="onLoad"/>
             <line clip-path="url(#clipPath43)" fill="none" x1="738" x2="746"
                   y1="178" y2="178"/>
             <line clip-path="url(#clipPath43)" fill="none" x1="557" x2="565"
+                  y1="178" y2="178"/>
+            <line clip-path="url(#clipPath43)" fill="none" x1="565" x2="618"
+                  y1="178" y2="178"/>
+            <line clip-path="url(#clipPath43)" fill="none" x1="618" x2="626"
+                  y1="178" y2="178"/>
+            <line clip-path="url(#clipPath43)" fill="none" x1="657" x2="665"
                   y1="38" y2="38"/>
-            <line clip-path="url(#clipPath43)" fill="none" x1="565" x2="598"
+            <line clip-path="url(#clipPath43)" fill="none" x1="665" x2="718"
                   y1="38" y2="38"/>
-            <line clip-path="url(#clipPath43)" fill="none" x1="598" x2="606"
+            <line clip-path="url(#clipPath43)" fill="none" x1="718" x2="726"
                   y1="38" y2="38"/>
-            <line clip-path="url(#clipPath43)" fill="none" x1="777" x2="785"
-                  y1="38" y2="38"/>
-            <line clip-path="url(#clipPath43)" fill="none" x1="785" x2="838"
-                  y1="38" y2="38"/>
-            <line clip-path="url(#clipPath43)" fill="none" x1="838" x2="846"
+            <line clip-path="url(#clipPath43)" fill="none" x1="397" x2="405"
+                  y1="118" y2="118"/>
+            <line clip-path="url(#clipPath43)" fill="none" x1="405" x2="498"
+                  y1="118" y2="38"/>
+            <line clip-path="url(#clipPath43)" fill="none" x1="498" x2="506"
                   y1="38" y2="38"/>
             <line clip-path="url(#clipPath43)" fill="none" x1="397" x2="405"
                   y1="118" y2="118"/>
@@ -1226,6 +1202,30 @@ WQAAAABJRU5ErkJggg==" xlink:actuate="onLoad"/>
                   y1="118" y2="178"/>
             <line clip-path="url(#clipPath43)" fill="none" x1="498" x2="506"
                   y1="178" y2="178"/>
+            <line clip-path="url(#clipPath43)" fill="none" x1="777" x2="785"
+                  y1="38" y2="38"/>
+            <line clip-path="url(#clipPath43)" fill="none" x1="785" x2="838"
+                  y1="38" y2="38"/>
+            <line clip-path="url(#clipPath43)" fill="none" x1="838" x2="846"
+                  y1="38" y2="38"/>
+            <line clip-path="url(#clipPath43)" fill="none" x1="557" x2="565"
+                  y1="38" y2="38"/>
+            <line clip-path="url(#clipPath43)" fill="none" x1="565" x2="598"
+                  y1="38" y2="38"/>
+            <line clip-path="url(#clipPath43)" fill="none" x1="598" x2="606"
+                  y1="38" y2="38"/>
+            <line clip-path="url(#clipPath43)" fill="none" x1="137" x2="145"
+                  y1="118" y2="118"/>
+            <line clip-path="url(#clipPath43)" fill="none" x1="145" x2="238"
+                  y1="118" y2="118"/>
+            <line clip-path="url(#clipPath43)" fill="none" x1="238" x2="246"
+                  y1="118" y2="118"/>
+            <line clip-path="url(#clipPath43)" fill="none" x1="297" x2="305"
+                  y1="118" y2="118"/>
+            <line clip-path="url(#clipPath43)" fill="none" x1="305" x2="338"
+                  y1="118" y2="118"/>
+            <line clip-path="url(#clipPath43)" fill="none" x1="338" x2="346"
+                  y1="118" y2="118"/>
         </g>
     </g>
 </svg>

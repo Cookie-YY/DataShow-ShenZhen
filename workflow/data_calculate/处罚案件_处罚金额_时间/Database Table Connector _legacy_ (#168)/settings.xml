@@ -6,7 +6,7 @@
 <entry key="memory_policy" type="xstring" value="CacheSmallInMemory"/>
 </config>
 <config key="model">
-<entry key="statement" type="xstring" value="SELECT PUNISH_HANGYE, PUNISH_QUYU, YEAR, MONTH, QUARTER, HALFYEAR, FINE_SUM FROM BUSIN_CASE_PUNISH_NARROW"/>
+<entry key="statement" type="xstring" value="SELECT PUNISH_HANGYE, PUNISH_QUYU, YEAR, MONTH, QUARTER, HALFYEAR, FINE_SUM, PUNISH_TYPE FROM BUSIN_CASE_PUNISH_NARROW"/>
 <entry key="execute_without_configure" type="xboolean" value="true"/>
 <entry key="driver" type="xstring" value="oracle.jdbc.OracleDriver"/>
 <entry key="database" type="xstring" value="jdbc:oracle:thin:@127.0.0.1:1521:ORCL"/>

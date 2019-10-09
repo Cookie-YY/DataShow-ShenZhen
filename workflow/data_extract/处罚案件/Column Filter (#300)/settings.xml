@@ -47,8 +47,8 @@
 <config key="nodeAnnotation">
 <entry key="text" type="xstring" value="筛选%%00013%%00010代码和最终映射"/>
 <entry key="bgcolor" type="xint" value="16777215"/>
-<entry key="x-coordinate" type="xint" value="-554"/>
-<entry key="y-coordinate" type="xint" value="-141"/>
+<entry key="x-coordinate" type="xint" value="-552"/>
+<entry key="y-coordinate" type="xint" value="-281"/>
 <entry key="width" type="xint" value="106"/>
 <entry key="height" type="xint" value="30"/>
 <entry key="alignment" type="xstring" value="CENTER"/>

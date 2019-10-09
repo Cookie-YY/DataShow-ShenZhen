@@ -17,11 +17,6 @@
 <entry key="new_column_name" type="xstring" value="PERSON_IDCARD"/>
 <entry key="new_column_type" type="xint" value="0"/>
 </config>
-<config key="2">
-<entry key="old_column_name" type="xstring" value="CREATE_TIME_"/>
-<entry key="new_column_name" type="xstring" value="CREATE_TIME"/>
-<entry key="new_column_type" type="xint" value="0"/>
-</config>
 </config>
 </config>
 <config key="nodeAnnotation">

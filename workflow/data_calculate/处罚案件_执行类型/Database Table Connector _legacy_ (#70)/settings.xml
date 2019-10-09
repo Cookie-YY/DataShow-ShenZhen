@@ -6,7 +6,7 @@
 <entry key="memory_policy" type="xstring" value="CacheSmallInMemory"/>
 </config>
 <config key="model">
-<entry key="statement" type="xstring" value="SELECT ID, PUNISH_HANGYE, PUNISH_QUYU,%%00010CASE WHEN REVOKE_REGISTER_DATE IS NULL THEN PUNISHMENT_DATE ELSE REVOKE_REGISTER_DATE END AS ENFORCE_DATE,%%00010CASE WHEN REVOKE_REGISTER_DATE IS NOT NULL THEN '03' ELSE PUNISHMENT_TYPE END AS ENFORCE_TYPE%%00010FROM BUSIN_CASE_PUNISH_COM_NARROW"/>
+<entry key="statement" type="xstring" value="SELECT ID, PUNISH_HANGYE, PUNISH_QUYU,%%00010CASE WHEN REVOKE_REGISTER_DATE IS NULL THEN PUNISHMENT_DATE ELSE REVOKE_REGISTER_DATE END AS ENFORCE_DATE,%%00010CASE WHEN REVOKE_REGISTER_DATE IS NOT NULL THEN '03' ELSE PUNISHMENT_TYPE END AS PUNISH_ENFORCETYPE%%00010FROM BUSIN_CASE_PUNISH_COM_NARROW"/>
 <entry key="execute_without_configure" type="xboolean" value="true"/>
 <entry key="driver" type="xstring" value="oracle.jdbc.OracleDriver"/>
 <entry key="database" type="xstring" value="jdbc:oracle:thin:@127.0.0.1:1521:ORCL"/>
