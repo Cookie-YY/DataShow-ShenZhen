@@ -258,6 +258,8 @@ class JsonUpdate(BaseJsonUpdate):
                 return round(float(sum(df[col])) * multi, self.sig_dig) if any(df[col]) else 0
         else:
             print('ATTENTION!!!, WRONG PARAMETER')
+
+    # 不分证件类型的数量时（单证件...），各证件类型的数量（市级证件...）
     @staticmethod
     def get_df1row(df):
         try:
@@ -265,9 +267,23 @@ class JsonUpdate(BaseJsonUpdate):
         except:
             return df
 
+    # 处理zip之后的数据框，使之重新成为数据框
     @staticmethod
     def get_df(df):
         return pd.DataFrame(df[1])
+
+    # 吻合度的前五前十职权的生成
+    @staticmethod
+    def get_whd(tar_list, name_, df_tsjb, num_tsjb, df_cfaj, num_cfaj):
+        if not df_tsjb['POWER_CODE'].isnull().all():  # 如果投诉举报职权有数
+            for code in df_tsjb['POWER_CODE']:
+                tar_list.append({"name": name_, "code": str(code), "type": "投诉举报", "num": num_tsjb})
+        if not df_cfaj['POWER_CODE'].isnull().all():  # 如果处罚案件职权有数
+            for code in df_cfaj['POWER_CODE']:
+                tar_list.append({"name": name_, "code": str(code), "type": "处罚案件", "num": num_cfaj})
+        if df_tsjb['POWER_CODE'].isnull().all() and df_cfaj['POWER_CODE'].isnull().all():  # 如果都没数
+            tar_list.append({"name": name_, "num": 0})
+        return tar_list
 
     def json_io(self, json_name, content_dict, iscf=False):
         """
