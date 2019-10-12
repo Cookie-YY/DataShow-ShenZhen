@@ -837,60 +837,58 @@ for group_data1, group_data2, group_data3 in zip(punish_year_tongbi_%.groupby('Y
     """
 
 
-# for i, j in ju.ga:
-#     """处罚案件json"""
-#     exec(command_tradePunish.replace('%', i).replace('^', j))
-#     exec(command_cityPunish.replace('%', i).replace('^', j))
-#     exec(command_yearsPunish.replace('%', i).replace('^', j))
-#     # 各月/季度/半年 单独写
-#     # exec(command_caseMonthlyTrend_.replace('%', i).replace('^', j))  # 历年案件量——已拆出一张新图
-#     exec(command_handlingOfCases.replace('%', i).replace('^', j))
-#     exec(command_genreOfCases.replace('%', i).replace('^', j))
-#     exec(command_allMeasures.replace('%', i).replace('^', j))
-#     exec(command_tradeCaseGenre.replace('%', i).replace('^', j))
-#     exec(command_cityCaseGenre.replace('%', i).replace('^', j))
-#     exec(command_punissoanylisLeftPie.replace('%', i).replace('^', j))
-#     exec(command_objectlawBefore.replace('%', i).replace('^', j))
-#     exec(command_objectlawAfter.replace('%', i).replace('^', j))
-#     """处罚金额json"""
-#     # 处罚金额的时间趋势单写（分月/季/半年）
-#     exec(command_tradePunishMoney.replace('%', i).replace('^', j))
-#     exec(command_cityPunishMoney.replace('%', i).replace('^', j))
-#     """人均处罚量json"""
-#     exec(command_rateOfFrontLineExecutor.replace('%', i).replace('^', j))
-#     exec(command_tradePerPunish.replace('%', i).replace('^', j))
-#     exec(command_cityPerPunish.replace('%', i).replace('^', j))
-#     """职权履行情况json"""
-#     exec(command_tradePowerPerform.replace('%', i).replace('^', j))
-#     exec(command_cityPowerPerform.replace('%', i).replace('^', j))
-#     """案件评查json为空"""
-#     """处罚周期json"""
-#     # 处罚周期单写分全部案件/延期案件
-#     """投诉举报分析json"""
-#     # 吻合度单写（不分是否公安）
-#     """左侧json"""
-#     exec(command_rateLeftPunishPower.replace('%', i).replace('^', j))
-#     exec(command_rateLeftCfzqlzl.replace('%', i).replace('^', j))
-#     exec(command_rateLeftPunishCase.replace('%', i).replace('^', j))
-#
-# yearsPunish['years'] = years
-# yearsPunish['trade'] = trade
-# yearsPunish['city'] = city
-#
-# for time_ in ["month", "quarter", "halfyear"]:
-#     for i, j in ju.ga:
-#         exec(command_caseMonthlyTrend.replace('!', time_).replace('@', time_.upper()).replace('%', i).replace('^', j))
-#         exec(command_punishMonthTrend.replace('!', time_).replace('@', time_.upper()).replace('%', i).replace('^', j))
-#
-# for cycle, cycle_name in zip(["all", "yanqi"], ["全部案件", "延期案件"]):
-#     for i, j in ju.ga:
-#         exec(command_punishPeriod.replace('!', cycle).replace('@', cycle_name).replace('%', i).replace('^', j))
+for i, j in ju.ga:
+    """处罚案件json"""
+    exec(command_tradePunish.replace('%', i).replace('^', j))
+    exec(command_cityPunish.replace('%', i).replace('^', j))
+    exec(command_yearsPunish.replace('%', i).replace('^', j))
+    # 各月/季度/半年 单独写
+    # exec(command_caseMonthlyTrend_.replace('%', i).replace('^', j))  # 历年案件量——已拆出一张新图
+    exec(command_handlingOfCases.replace('%', i).replace('^', j))
+    exec(command_genreOfCases.replace('%', i).replace('^', j))
+    exec(command_allMeasures.replace('%', i).replace('^', j))
+    exec(command_tradeCaseGenre.replace('%', i).replace('^', j))
+    exec(command_cityCaseGenre.replace('%', i).replace('^', j))
+    exec(command_punissoanylisLeftPie.replace('%', i).replace('^', j))
+    exec(command_objectlawBefore.replace('%', i).replace('^', j))
+    exec(command_objectlawAfter.replace('%', i).replace('^', j))
+    """处罚金额json"""
+    # 处罚金额的时间趋势单写（分月/季/半年）
+    exec(command_tradePunishMoney.replace('%', i).replace('^', j))
+    exec(command_cityPunishMoney.replace('%', i).replace('^', j))
+    """人均处罚量json"""
+    exec(command_rateOfFrontLineExecutor.replace('%', i).replace('^', j))
+    exec(command_tradePerPunish.replace('%', i).replace('^', j))
+    exec(command_cityPerPunish.replace('%', i).replace('^', j))
+    """职权履行情况json"""
+    exec(command_tradePowerPerform.replace('%', i).replace('^', j))
+    exec(command_cityPowerPerform.replace('%', i).replace('^', j))
+    """案件评查json为空"""
+    """处罚周期json"""
+    # 处罚周期单写分全部案件/延期案件
+    """投诉举报分析json"""
+    # 吻合度单写（不分是否公安）
+    """左侧json"""
+    exec(command_rateLeftPunishPower.replace('%', i).replace('^', j))
+    exec(command_rateLeftCfzqlzl.replace('%', i).replace('^', j))
+    exec(command_rateLeftPunishCase.replace('%', i).replace('^', j))
+
+yearsPunish['years'] = years
+yearsPunish['trade'] = trade
+yearsPunish['city'] = city
+
+for time_ in ["month", "quarter", "halfyear"]:
+    for i, j in ju.ga:
+        exec(command_caseMonthlyTrend.replace('!', time_).replace('@', time_.upper()).replace('%', i).replace('^', j))
+        exec(command_punishMonthTrend.replace('!', time_).replace('@', time_.upper()).replace('%', i).replace('^', j))
+
+for cycle, cycle_name in zip(["all", "yanqi"], ["全部案件", "延期案件"]):
+    for i, j in ju.ga:
+        exec(command_punishPeriod.replace('!', cycle).replace('@', cycle_name).replace('%', i).replace('^', j))
 
 exec(command_tradeReportCoincide.replace("%", "isga"))
 exec(command_cityReportCoincide.replace("%", "isga"))
 
-for i in tradeReportCoincide:
-    print(i)
 if __name__ == '__main__':
     content_dict_xzcfajl = {  # done
         "tradePunish": tradePunish,
@@ -938,10 +936,10 @@ if __name__ == '__main__':
         "rateLeftPunishCase": rateLeftPunishCase,
         "rateLeftCfzqlzl": rateLeftCfzqlzl}
 
-    # ju.json_io("xzcfajl.json", content_dict_xzcfajl, iscf=True)
-    # ju.json_io("xzcfje.json", content_dict_xzcfje, iscf=True)
-    # ju.json_io("rjcfl.json", content_dict_rjcfl, iscf=True)
-    # ju.json_io("zqlxgk.json", content_dict_zqlxgk, iscf=True)
-    # ju.json_io("cfzq.json", content_dict_cfzq, iscf=True)
+    ju.json_io("xzcfajl.json", content_dict_xzcfajl, iscf=True)
+    ju.json_io("xzcfje.json", content_dict_xzcfje, iscf=True)
+    ju.json_io("rjcfl.json", content_dict_rjcfl, iscf=True)
+    ju.json_io("zqlxgk.json", content_dict_zqlxgk, iscf=True)
+    ju.json_io("cfzq.json", content_dict_cfzq, iscf=True)
     ju.json_io("tsjbfx.json", content_dict_tsjbfx, iscf=True)
-    # ju.json_io("leftPane.json", content_dict_leftPane, iscf=True)
+    ju.json_io("leftPane.json", content_dict_leftPane, iscf=True)
